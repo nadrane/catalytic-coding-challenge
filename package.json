@@ -1,0 +1,20 @@
+{
+    "name": "coding-challenge-frontend",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "echo \"This command should start your application.\""
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/catalyticlabs/coding-challenge-frontend.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/catalyticlabs/coding-challenge-frontend/issues"
+    },
+    "homepage": "https://github.com/catalyticlabs/coding-challenge-frontend#readme"
+}
