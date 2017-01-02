@@ -21,7 +21,7 @@
 
 ## The Project
 
-You'll be building a mini app that shows a single Pushbot process and all of it's tasks.
+You'll be building a mini app that shows a single Pushbot process and all of its tasks.
 
 In this project folder is a `data` folder. It has 3 pieces of data you'll need to complete this objective. 
 - **Process**  
