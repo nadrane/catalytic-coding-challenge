@@ -3,8 +3,8 @@ import styled from 'styled-components'
 
 import {
   BoldTitle,
+  Peeker,
 } from '../../Atoms'
-import Icon from '../../../../public/images/pushbot-peeker.png'
 import styles from '../../styles'
 
 const Parent = styled.div`
@@ -14,6 +14,6 @@ const Parent = styled.div`
 
 export default () => (
   <Parent>
-    <img src={Icon} alt="Pushbot" />
+    <Peeker />
   </Parent>
 )
