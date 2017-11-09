@@ -6,4 +6,7 @@ export default {
     pushDark: '#74B1B4',
     background: '#EEF0F4',
   },
+  widths: {
+    small: '30em',
+  },
 }
