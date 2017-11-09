@@ -6,6 +6,10 @@ import {
 } from '../../Atoms'
 import Icon from '../../../../public/images/pushbot-peeker.png'
 
+const Parent = styled.div`
+
+`
+
 export default () => (
-  <Icon />
+  <img src={Icon} alt="Pushbot" />
 )
