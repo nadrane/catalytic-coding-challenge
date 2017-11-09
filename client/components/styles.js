@@ -7,6 +7,6 @@ export default {
     background: '#EEF0F4',
   },
   widths: {
-    small: '30em',
+    small: '25em',
   },
 }
