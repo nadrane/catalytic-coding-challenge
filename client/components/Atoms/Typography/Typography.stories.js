@@ -7,7 +7,7 @@ import {
   SmallBody,
 } from '../Typography'
 
-storiesOf('Typography/BoldTitle', module)
+storiesOf('Atoms/Typography', module)
   .add('BoldTitle', () => <BoldTitle>I am a bold title!</BoldTitle>)
   .add('NavText', () => <NavText>I am a link!</NavText>)
   .add('SmallBody', () => <SmallBody>Small Body Text :(</SmallBody>)
