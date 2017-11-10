@@ -12,6 +12,7 @@ const Parent = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: .3rem 0;
 `
 
 export default props => (
