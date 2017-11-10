@@ -6,7 +6,7 @@
   "scripts": {
     "build-client": "webpack",
     "build-client-watch": "webpack -w",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "node server/index.js",
     "start-dev": "yarn build-client-watch & nodemon server/index.js",
     "storybook": "start-storybook -p 6006",
@@ -47,9 +47,11 @@
     "babel-register": "^6.26.0",
     "css-loader": "^0.28.7",
     "file-loader": "^1.1.5",
+    "jest": "^21.2.1",
     "nodemon": "^1.12.1",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.0",
+    "supertest": "^3.0.0",
     "webpack": "^3.8.1"
   }
 }
