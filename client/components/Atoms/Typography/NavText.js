@@ -3,5 +3,6 @@ import styled from 'styled-components'
 
 export default styled.a`
   font-family: Roboto, sans-serif;
+  text-transform: uppercase;
 `
 
