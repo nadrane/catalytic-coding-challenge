@@ -13,7 +13,7 @@ const Parent = styled.div`
   width: ${styles.widths.small};
   display: flex;
   height: 4em;
-  align-items: flex-end;
+  align-items: center;
 `
 
 const VersionText = SmallBody.extend`
@@ -25,6 +25,7 @@ const VersionText = SmallBody.extend`
 const TextWrapper = styled.div`
   display: flex;
   align-items: flex-end;
+  margin-left: 4rem
 `
 
 export default () => (
