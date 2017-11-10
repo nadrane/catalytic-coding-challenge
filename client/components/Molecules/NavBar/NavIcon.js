@@ -15,6 +15,8 @@ const Parent = styled.div`
 
 const VersionText = SmallBody.extend`
   font-size: 1rem;
+  margin-left: .3rem;
+  margin-bottom: .3rem;
 `
 
 const TextWrapper = styled.div`
