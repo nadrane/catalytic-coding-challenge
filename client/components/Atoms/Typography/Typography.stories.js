@@ -9,6 +9,7 @@ import {
   SmallBody,
   LeftBarTitle,
   LeftBarText,
+  EditableLabel,
 } from '../Typography'
 
 const Black = styled.div`
@@ -25,3 +26,5 @@ storiesOf('Atoms/Typography', module)
 storiesOf('Atoms/Typography', module)
   .add('SmallBody', () => <SmallBody>Small Body Text :(</SmallBody>)
   .add('LeftBarTitle', () => <LeftBarTitle>Fill out information</LeftBarTitle>)
+  .add('EditableLabel', () => <EditableLabel>Edit Template</EditableLabel>)
+  .add('EditableLabel main', () => <EditableLabel main>Edit Template</EditableLabel>)
