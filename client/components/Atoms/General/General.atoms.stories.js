@@ -6,6 +6,7 @@ import {
   TextInput,
   BigTextInput,
   TextLabelInput,
+  MainSection,
 } from '../General'
 
 storiesOf('Atoms/General', module)
@@ -22,4 +23,7 @@ storiesOf('Atoms/General', module)
   ))
   .add('TextLabelInput', () => (
     <TextLabelInput>Step Name</TextLabelInput>
+  ))
+  .add('MainSection', () => (
+    <MainSection>ASDF</MainSection>
   ))
