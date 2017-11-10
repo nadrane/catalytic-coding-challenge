@@ -13,6 +13,8 @@ import {
 } from './components'
 import {
   getSteps,
+  getProcess,
+  getUsers,
 } from './store'
 
 class Routes extends React.Component {
@@ -38,6 +40,8 @@ class Routes extends React.Component {
 const mapDispatch = dispatch => ({
   loadInitialData() {
     dispatch(getSteps())
+    dispatch(getProcess())
+    dispatch(getUsers())
   },
 })
 export default connect(null, mapDispatch)(Routes)

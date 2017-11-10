@@ -12,7 +12,7 @@ const Parent = styled.div`
 export default props => (
   <Parent>
     {
-      props.links.map(link => <NavBlock>{link}</NavBlock>)
+      props.links.map(link => <NavBlock key={link}>{link}</NavBlock>)
     }
   </Parent>
 )

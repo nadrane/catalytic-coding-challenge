@@ -15,11 +15,11 @@ const Parent = styled.ol`
 export default props => (
   <Parent>
     {
-      props.headers.map(header => <LeftBarHeader>{header}</LeftBarHeader>)
+      props.headers.map(header => <LeftBarHeader key={header}>{header}</LeftBarHeader>)
     }
     {
       props.items.map(item =>
-        <LeftBarListItem selected={item.selected} title={item.title}>{item.body}</LeftBarListItem>)
+        <LeftBarListItem key={item.title} selected={item.selected} title={item.title}>{item.body}</LeftBarListItem>)
     }
   </Parent>
 )
