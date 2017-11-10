@@ -26,7 +26,7 @@ class Routes extends React.Component {
         <div>
           <NavBar />
           <Switch>
-            <Route path="/step/:id" component={NavBar} />
+            <Route path="/step/:id" />
             <Redirect to="/step/1" />
           </Switch>
         </div>

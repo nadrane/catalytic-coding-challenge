@@ -7,4 +7,4 @@ const Image = styled.img`
   align-self: flex-end;
 `
 
-export default () => <Image src="./images/pushbot-peeker.png" />
+export default () => <Image src="/images/pushbot-peeker.png" />
