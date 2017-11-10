@@ -20,4 +20,8 @@ const leftBarItems = [
 storiesOf('Organisms', module)
   .add('NavBar', () => <NavBar />)
   .add('LeftBar', () => <LeftBar headers={leftBarHeaders} items={leftBarItems} />)
-  .add('Step', () => <Step />)
+  .add('Step', () => (
+    <div style={{ height: '50vh', width: '50vw' }}>
+      <Step />
+    </div>
+  ))
