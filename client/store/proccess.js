@@ -4,7 +4,7 @@ const READ_PROCESS = 'READ_PROCESS'
 const UPDATE_PROCESS = 'UPDATE_PROCESS'
 
 const readProcess = proce => ({ type: READ_PROCESS, proce })
-const updateProcess = proce => ({ type: UPDATE_PROCESS, proce })
+export const updateProcess = proce => ({ type: UPDATE_PROCESS, proce })
 
 export const getProcess = () =>
   async (dispatch) => {
