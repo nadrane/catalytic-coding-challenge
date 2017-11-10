@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react'
 
 import {
   NavBar,
+  Step,
   LeftBar,
 } from '../Organisms'
 
@@ -19,3 +20,4 @@ const leftBarItems = [
 storiesOf('Organisms', module)
   .add('NavBar', () => <NavBar />)
   .add('LeftBar', () => <LeftBar headers={leftBarHeaders} items={leftBarItems} />)
+  .add('Step', () => <Step />)
