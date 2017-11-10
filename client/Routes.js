@@ -3,6 +3,7 @@ import { Router } from 'react-router'
 import {
   Route,
   Switch,
+  Redirect,
 } from 'react-router-dom'
 
 import history from './history'
@@ -18,7 +19,13 @@ class Routes extends React.Component {
   render() {
     return (
       <Router history={history}>
-        <NavBar />
+        <div>
+          <NavBar />
+          <Switch>
+            <Route path="/step/:id" component={NavBar} />
+            <Redirect to="/step/1" />
+          </Switch>
+        </div>
       </Router>
     )
   }
