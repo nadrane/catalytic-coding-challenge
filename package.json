@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/catalyticlabs/coding-challenge-frontend#readme",
   "dependencies": {
+    "history": "^4.7.2",
     "react": "^16.1.0",
     "react-dom": "^16.1.0",
     "react-redux": "^5.0.6",
@@ -33,6 +34,11 @@
     "@storybook/addon-actions": "^3.2.14",
     "@storybook/addon-links": "^3.2.14",
     "@storybook/react": "^3.2.14",
+    "babel-loader": "^7.1.2",
+    "css-loader": "^0.28.7",
+    "file-loader": "^1.1.5",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.19.0",
     "webpack": "^3.8.1"
   }
 }
