@@ -9,5 +9,5 @@ export default styled.input`
   padding: .7rem 0;
   border: 0;
   border-bottom: 1px solid ${styles.colors.greyLight};
-  margin-bottom: .5rem;
+  margin-bottom: .3rem;
 `
