@@ -5,6 +5,7 @@ import {
   RoundedButton,
   TextInput,
   BigTextInput,
+  TextLabelInput,
 } from '../General'
 
 storiesOf('Atoms/General', module)
@@ -18,4 +19,7 @@ storiesOf('Atoms/General', module)
     <div style={{ width: '15rem' }}>
       <BigTextInput value="asdf" />
     </div>
+  ))
+  .add('TextLabelInput', () => (
+    <TextLabelInput>Step Name</TextLabelInput>
   ))
