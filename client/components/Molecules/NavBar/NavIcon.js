@@ -19,6 +19,7 @@ const VersionText = SmallBody.extend`
 
 const TextWrapper = styled.div`
   display: flex;
+  align-items: flex-end;
 `
 
 export default () => (
