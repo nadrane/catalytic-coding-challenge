@@ -13,6 +13,7 @@ import {
 
 const Parent = MainSection.extend`
   padding: 2rem 1rem;
+  box-sizing: border-box;
 `
 
 const Content = Card.extend`

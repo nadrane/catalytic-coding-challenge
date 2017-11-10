@@ -6,16 +6,22 @@ import {
   Redirect,
 } from 'react-router-dom'
 import { connect } from 'react-redux'
+import styled from 'styled-components'
 
 import history from './history'
 import {
   NavBar,
+  Main,
 } from './components'
 import {
   getSteps,
   getProcess,
   getUsers,
 } from './store'
+
+const Parent = styled.div`
+  height: 100%;s
+`
 
 class Routes extends React.Component {
   componentDidMount() {
@@ -25,13 +31,13 @@ class Routes extends React.Component {
   render() {
     return (
       <Router history={history}>
-        <div>
+        <Parent>
           <NavBar />
           <Switch>
-            <Route path="/step/:id" />
+            <Route path="/step/:id" component={Main} />
             <Redirect to="/step/1" />
           </Switch>
-        </div>
+        </Parent>
       </Router>
     )
   }
