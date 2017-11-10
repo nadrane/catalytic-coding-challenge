@@ -20,6 +20,7 @@ const VersionText = SmallBody.extend`
   font-size: 1rem;
   margin-left: .3rem;
   margin-bottom: .3rem;
+  color: ${styles.colors.grey};
 `
 
 const TextWrapper = styled.div`
