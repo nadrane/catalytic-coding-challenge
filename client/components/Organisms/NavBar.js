@@ -14,6 +14,10 @@ const Parent = styled.nav`
   background-color: ${styles.colors.dark};
 `
 
+const LeftGroup = styled.div`
+  display: flex;
+`
+
 const leftLinks = [
   'tasks',
   'routines',
@@ -27,8 +31,10 @@ const rightLinks = [
 
 export default () => (
   <Parent>
-    <NavIcon />
-    <MainNavGroup links={leftLinks} />
+    <LeftGroup>
+      <NavIcon />
+      <MainNavGroup links={leftLinks} />
+    </LeftGroup>
     <MainNavGroup links={rightLinks} />
   </Parent>
 )
