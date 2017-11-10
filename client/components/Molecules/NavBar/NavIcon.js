@@ -11,6 +11,9 @@ import styles from '../../styles'
 const Parent = styled.div`
   background-color: ${styles.colors.darkAccent};
   width: ${styles.widths.small};
+  display: flex;
+  height: 4em;
+  align-items: flex-end;
 `
 
 const VersionText = SmallBody.extend`

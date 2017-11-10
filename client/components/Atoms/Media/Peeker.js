@@ -7,6 +7,7 @@ import styles from '../../styles'
 const Image = styled.img`
   width: 5em;
   height: auto;
+  align-self: flex-end;
 `
 
 export default () => <Image src={peekerPath} />
