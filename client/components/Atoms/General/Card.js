@@ -4,4 +4,5 @@ export default styled.article`
   background-color: white;
   padding: 1rem;
   width: 100%;
+  box-sizing: border-box;
 `
