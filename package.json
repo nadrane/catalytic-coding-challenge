@@ -8,6 +8,7 @@
     "build-client-watch": "webpack -w",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server/index.js",
+    "start-dev": "nodemon server/index.js & yarn build-client-watch",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -23,7 +24,11 @@
   "homepage": "https://github.com/catalyticlabs/coding-challenge-frontend#readme",
   "dependencies": {
     "babel-preset-react": "^6.24.1",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
     "history": "^4.7.2",
+    "morgan": "^1.9.0",
+    "node-sass": "^4.6.0",
     "react": "^16.1.0",
     "react-dom": "^16.1.0",
     "react-redux": "^5.0.6",
@@ -42,6 +47,7 @@
     "babel-register": "^6.26.0",
     "css-loader": "^0.28.7",
     "file-loader": "^1.1.5",
+    "nodemon": "^1.12.1",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.0",
     "webpack": "^3.8.1"
