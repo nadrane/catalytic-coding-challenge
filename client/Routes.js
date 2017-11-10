@@ -5,15 +5,19 @@ import {
   Switch,
   Redirect,
 } from 'react-router-dom'
+import { connect } from 'react-redux'
 
 import history from './history'
 import {
   NavBar,
 } from './components'
+import {
+  getSteps,
+} from './store'
 
 class Routes extends React.Component {
   componentDidMount() {
-
+    this.props.loadInitialData()
   }
 
   render() {
@@ -31,4 +35,9 @@ class Routes extends React.Component {
   }
 }
 
-export default Routes
+const mapDispatch = dispatch => ({
+  loadInitialData() {
+    dispatch(getSteps())
+  },
+})
+export default connect(null, mapDispatch)(Routes)

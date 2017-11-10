@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/catalyticlabs/coding-challenge-frontend#readme",
   "dependencies": {
+    "axios": "^0.17.0",
     "babel-preset-react": "^6.24.1",
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
@@ -48,6 +49,7 @@
     "@storybook/react": "^3.2.14",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
+    "babel-polyfill": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "babel-register": "^6.26.0",

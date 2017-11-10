@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 const CREATE_STEP = 'CREATE_STEP'
 const READ_STEPS = 'READ_STEPS'
 const UPDATE_STEP = 'UPDATE_STEP'
@@ -8,6 +10,16 @@ export const createStep = step => ({ type: CREATE_STEP, step })
 export const readSteps = steps => ({ type: READ_STEPS, steps })
 export const updateStep = step => ({ type: UPDATE_STEP, step })
 export const deleteStep = stepId => ({ type: DELETE_STEP, stepId })
+
+export const getSteps = () =>
+  async (dispatch) => {
+    try {
+      const response = await axios.get('/api/steps')
+      dispatch(readSteps(response.data))
+    } catch (error) {
+      console.error(error)
+    }
+  }
 
 export default (state = [], action) => {
   switch (action.type) {
