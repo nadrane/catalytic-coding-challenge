@@ -6,7 +6,7 @@ import {
 } from '../../Atoms'
 import styles from '../../styles'
 
-const horizontalPadding = '3rem'
+const horizontalPadding = '2rem'
 
 const Block = styled.div`
   padding-left: ${horizontalPadding};
