@@ -16,6 +16,7 @@ const Block = styled.div`
   height: ${styles.heights.nav};
   display: flex;
   align-items: center;
+  cursor: pointer;
 `
 
 export default props => (
