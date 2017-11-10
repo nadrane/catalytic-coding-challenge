@@ -7,9 +7,10 @@ import {
 import styles from '../../styles'
 
 const Block = styled.div`
-  padding: 3rem;
+  padding-horizontal: 3rem;
   background-color: ${styles.colors.dark};
   width: fit-content;
+  height: ${styles.heights.nav};
 `
 
 export default props => (

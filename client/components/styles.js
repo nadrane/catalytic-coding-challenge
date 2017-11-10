@@ -10,4 +10,7 @@ export default {
   widths: {
     small: '25em',
   },
+  heights: {
+    nav: '4em',
+  },
 }
