@@ -6,6 +6,7 @@ export default {
     pushDark: '#74B1B4',
     background: '#EEF0F4',
     grey: '#737684',
+    greyLight: '#C0B6BA',
     accent: '#F6F6F7',
   },
   widths: {
