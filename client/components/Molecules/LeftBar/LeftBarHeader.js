@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import {
-  SmallBody,
+  LeftBarText,
 } from '../../Atoms'
 import styles from '../../styles'
 
@@ -16,6 +16,6 @@ const Parent = styled.div`
 
 export default props => (
   <Parent>
-    <SmallBody>{props.children}</SmallBody>
+    <LeftBarText>{props.children}</LeftBarText>
   </Parent>
 )
