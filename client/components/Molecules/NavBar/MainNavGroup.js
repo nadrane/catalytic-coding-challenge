@@ -2,13 +2,17 @@ import React from 'react'
 import styled from 'styled-components'
 
 import {
-  NavText,
+  NavBlock,
 } from '../../Atoms'
 
+const Parent = styled.div`
+  display: flex;
+`
+
 export default props => (
-  <div>
+  <Parent>
     {
-      props.links.map(link => <NavText>{link}</NavText>)
+      props.links.map(link => <NavBlock>{link}</NavBlock>)
     }
-  </div>
+  </Parent>
 )
