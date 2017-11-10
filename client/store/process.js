@@ -9,7 +9,7 @@ export const updateProcess = proce => ({ type: UPDATE_PROCESS, proce })
 export const getProcess = () =>
   async (dispatch) => {
     try {
-      const response = await axios.get('/api/proccess')
+      const response = await axios.get('/api/process')
       dispatch(readProcess(response))
     } catch (error) {
       console.error(error)
