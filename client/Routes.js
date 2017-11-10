@@ -7,7 +7,7 @@ import {
 
 import history from './history'
 import {
-
+  NavBar,
 } from './components'
 
 class Routes extends React.Component {
@@ -18,7 +18,7 @@ class Routes extends React.Component {
   render() {
     return (
       <Router history={history}>
-
+        <NavBar />
       </Router>
     )
   }
