@@ -10,4 +10,4 @@ const Image = styled.img`
   align-self: flex-end;
 `
 
-export default () => <Image src={peekerPath} />
+export default () => <Image src="./images/pushbot-peeker.png" />
