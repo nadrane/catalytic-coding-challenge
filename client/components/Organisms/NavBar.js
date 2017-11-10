@@ -3,11 +3,15 @@ import styled from 'styled-components'
 
 import {
   MainNavGroup,
+  NavIcon,
 } from '../Molecules'
+import styles from '../styles'
 
 const Parent = styled.nav`
   width: 100%;
   display: flex;
+  justify-content: space-between;
+  background-color: ${styles.colors.dark};
 `
 
 const leftLinks = [
@@ -23,6 +27,7 @@ const rightLinks = [
 
 export default () => (
   <Parent>
+    <NavIcon />
     <MainNavGroup links={leftLinks} />
     <MainNavGroup links={rightLinks} />
   </Parent>

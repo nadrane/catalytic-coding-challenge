@@ -8,7 +8,7 @@ export default {
     grey: '#737684',
   },
   widths: {
-    small: '25em',
+    small: '18em',
   },
   heights: {
     nav: '4em',
