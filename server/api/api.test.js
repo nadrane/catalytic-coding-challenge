@@ -7,4 +7,10 @@ describe('Test the root path', () => {
     expect(response.statusCode).toBe(200)
     done()
   })
+  test('GET /process', async (done) => {
+    const response = await request(app).get('/api/process')
+    expect(response.statusCode).toBe(200)
+    expect(typeof JSON.parse(response.text)).toBe('object')
+    done()
+  })
 })

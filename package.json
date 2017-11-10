@@ -7,6 +7,8 @@
     "build-client": "webpack",
     "build-client-watch": "webpack -w",
     "test": "jest",
+    "test-exit": "jest --forceExit",
+    "test-watch": "jest --watch",
     "start": "node server/index.js",
     "start-dev": "yarn build-client-watch & nodemon server/index.js",
     "storybook": "start-storybook -p 6006",
