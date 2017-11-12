@@ -25,8 +25,17 @@ export default props => (
     }
     <List>
       {
-        props.items.map(item =>
-          <LeftBarListItem key={item.title} selected={item.selected} title={item.displayName}>{item.body}</LeftBarListItem>)
+        props.items.map(item => (
+          <LeftBarListItem
+            key={item.displayName}
+            selected={item.selected}
+            title={item.displayName}
+            assignedTo={item.assignedTo}
+            requiredPreviousSteps={item.requiredPreviousSteps}
+          >
+            {item.body}
+          </LeftBarListItem>
+        ))
       }
     </List>
   </Parent>

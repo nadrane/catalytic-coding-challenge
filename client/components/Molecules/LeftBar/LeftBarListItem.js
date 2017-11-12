@@ -29,7 +29,7 @@ export default (props) => {
         )
       }
       {
-        props.requiredPreviousSteps && (
+        !!props.requiredPreviousSteps.length && (
           <SmallBody>Depends on: {props.requiredPreviousSteps}</SmallBody>
         )
       }
