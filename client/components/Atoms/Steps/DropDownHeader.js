@@ -8,7 +8,10 @@ import {
 export default props => (
   <LeftBarTitle>
     {
-      props.children
+      props.open ? <i className="fa fa-caret-up" /> : <i className="fa fa-caret-down" />
+    }
+    {
+      `  ${props.children}`
     }
     {
       props.showNum && ` (${props.num})`
