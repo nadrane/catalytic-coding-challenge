@@ -23,7 +23,16 @@ export default (props) => {
   return (
     <Parent>
       <LeftBarTitle>{props.title}</LeftBarTitle>
-      <SmallBody>{props.children}</SmallBody>
+      {
+        props.assignedTo && (
+          <SmallBody><b>Assigned to {props.assignedTo}</b></SmallBody>
+        )
+      }
+      {
+        props.requiredPreviousSteps && (
+          <SmallBody>Depends on: {props.requiredPreviousSteps}</SmallBody>
+        )
+      }
     </Parent>
   )
 }
