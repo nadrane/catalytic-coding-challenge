@@ -5,16 +5,23 @@ import {
   LeftBarTitle,
 } from '../../Atoms'
 
+const Clickable = styled.button`
+  border: 0;
+  padding: 0;
+`
+
 export default props => (
-  <LeftBarTitle>
-    {
-      props.open ? <i className="fa fa-caret-up" /> : <i className="fa fa-caret-down" />
-    }
-    {
-      `  ${props.children}`
-    }
-    {
-      props.showNum && ` (${props.num})`
-    }
-  </LeftBarTitle>
+  <Clickable onClick={props.onClick}>
+    <LeftBarTitle>
+      {
+        props.open ? <i className="fa fa-caret-up" /> : <i className="fa fa-caret-down" />
+      }
+      {
+        `  ${props.children}`
+      }
+      {
+        props.showNum && ` (${props.num})`
+      }
+    </LeftBarTitle>
+  </Clickable>
 )
