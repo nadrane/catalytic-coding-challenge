@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, {keyframes} from 'styled-components'
 
 import {
   DropDownHeader,
@@ -9,6 +9,12 @@ const Parent = styled.section`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+`
+const appearAnimation = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
 `
 
 export default class extends React.Component {
@@ -22,6 +28,12 @@ export default class extends React.Component {
   toggleOpen = () => this.setState({ open: !this.state.open })
 
   render() {
+    const Animator = styled.div`
+      ${
+        this.state.open && `animation: ${appearAnimation} 0.6s;`
+      }
+    `
+
     return (
       <Parent>
         <DropDownHeader
@@ -30,9 +42,11 @@ export default class extends React.Component {
         >
           {this.props.header}
         </DropDownHeader>
-        {
-          this.state.open && this.props.children
-        }
+        <Animator>
+          {
+            this.state.open && this.props.children
+          }
+        </Animator>
       </Parent>
     )
   }
