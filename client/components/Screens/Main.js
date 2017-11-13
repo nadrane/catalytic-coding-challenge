@@ -45,7 +45,6 @@ const Main = (props) => {
       <LeftBar headers={leftBarHeaders} items={steps} />
       <Body>
         <Process />
-        {props.activeStep}
         <StepContent step={displayStep} />
       </Body>
     </Parent>

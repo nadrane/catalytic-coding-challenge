@@ -14,7 +14,7 @@ const Parent = styled.form`
 `
 
 const ExtraInformation = styled.div`
-
+  padding-bottom: 3rem;
 `
 
 const MarginTextInput = TextInput.extend`
@@ -68,6 +68,12 @@ class Process extends React.Component {
               <MarginTextInput
                 defaultValue={this.props.process.category}
                 key={this.props.process.category}
+              />
+              <EditableLabel>Owner</EditableLabel>
+              <MarginTextInput
+                readOnly
+                defaultValue={this.props.process.owner}
+                key={this.props.process.owner}
               />
               <DropDownHeader open onClick={this.toggleEditing}>collapse</DropDownHeader>
             </ExtraInformation>

@@ -5,6 +5,7 @@ import {
   EditableLabel,
   TextInput,
   TextLabelInput,
+  ExpandingTextInput,
 } from '../Atoms'
 import {
   LabelledInput,
@@ -20,6 +21,7 @@ export default props => (
     <TextLabelInput>Step Name</TextLabelInput>
     <br />
     <EditableLabel fontSize=".8rem">Instructions</EditableLabel>
+    <ExpandingTextInput>{props.step.description}</ExpandingTextInput>
     <LabelledInput>
       This will be shown to the user when they are assigned this step as a task.
     </LabelledInput>
