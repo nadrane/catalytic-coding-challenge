@@ -11,7 +11,7 @@ export default (props) => {
   const Parent = styled.div`
     height: fit-content;
     width: fit-content;
-    margin: 1.5rem;
+    margin: 1.5rem 1.2rem;
     display: flex;
     align-items: center;
     flex-direction: column;
