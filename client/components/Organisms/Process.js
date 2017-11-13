@@ -6,6 +6,7 @@ import {
   EditableLabel,
   BigTextInput,
   DropDownHeader,
+  ExpandingTextInput,
   TextInput,
 } from '../Atoms'
 
@@ -60,10 +61,7 @@ class Process extends React.Component {
           this.state.editing && (
             <ExtraInformation>
               <EditableLabel>Description</EditableLabel>
-              <MarginTextInput
-                defaultValue={this.props.process.description}
-                key={this.props.process.description}
-              />
+              <ExpandingTextInput>{this.props.process.description}</ExpandingTextInput>
               <EditableLabel>Category</EditableLabel>
               <MarginTextInput
                 defaultValue={this.props.process.category}

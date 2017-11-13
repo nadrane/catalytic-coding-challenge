@@ -13,7 +13,8 @@ const Input = styled.span`
 const Wrapper = styled.div`
   border-bottom: 1px solid ${styles.colors.greyLight};
   width: 100%;
-  padding-bottom: 0.7rem;
+  padding: 0.7rem 0;
+  margin-bottom: 2rem;
 `
 
 export default props => (
