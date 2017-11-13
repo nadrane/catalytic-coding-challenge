@@ -4,7 +4,6 @@ import styled from 'styled-components'
 import styles from '../../styles'
 
 const Input = styled.span`
-  border-bottom: 1px solid ${styles.colors.greyLight};
   background: none;
   width: 100%;
   font-family: Roboto, sans-serif;
@@ -12,11 +11,13 @@ const Input = styled.span`
 `
 
 const Wrapper = styled.div`
-  max-width: 100%;
+  border-bottom: 1px solid ${styles.colors.greyLight};
+  width: 100%;
+  padding-bottom: 0.7rem;
 `
 
-export default () => (
+export default props => (
   <Wrapper>
-    <Input contentEditable />
+    <Input contentEditable>{props.children}</Input>
   </Wrapper>
 )
