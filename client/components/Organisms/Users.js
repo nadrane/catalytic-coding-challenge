@@ -8,13 +8,15 @@ import {
 
 const Parent = styled.div`
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 `
 
 export default props => (
   <Parent>
     <ClearAvatar />
     {
-      props.users.map(user => <AvatarName>{user.username}</AvatarName>)
+      props.users.map(user => <AvatarName selected={user.selected} url={user.url}>{user.username}</AvatarName>)
     }
   </Parent>
 )
