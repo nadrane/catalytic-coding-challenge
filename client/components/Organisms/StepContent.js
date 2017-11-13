@@ -22,8 +22,6 @@ export default props => (
     <br />
     <EditableLabel fontSize=".8rem">Instructions</EditableLabel>
     <ExpandingTextInput>{props.step.description}</ExpandingTextInput>
-    <LabelledInput>
-      This will be shown to the user when they are assigned this step as a task.
-    </LabelledInput>
+    <TextLabelInput>This will be shown to the user when they are assigned this step as a task.</TextLabelInput>
   </Content>
 )
