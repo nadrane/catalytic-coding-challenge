@@ -6,6 +6,7 @@ const Image = styled.img`
   width: ${size};
   height: ${size};
   border-radius: ${size};
+  margin-bottom: 0.5rem;
 `
 
 const randomInt = (lb, ub) =>
