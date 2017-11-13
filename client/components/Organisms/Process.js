@@ -29,6 +29,9 @@ class Process extends React.Component {
     super()
     this.state = {
       editing: false,
+      processName: '',
+      description: '',
+      category: '',
     }
 
     this.toggleEditing = this.toggleEditing.bind(this)

@@ -8,6 +8,7 @@ export default (props) => {
     color: ${props.main ? styles.colors.pushLight : styles.colors.greyLight};
     font-family: Roboto, sans-serif;
     font-size: ${props.fontSize || '1rem'};
+    ${!!props.onClick && 'cursor: pointer;'}
   `
 
   return (

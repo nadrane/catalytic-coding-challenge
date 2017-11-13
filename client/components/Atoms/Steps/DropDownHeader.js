@@ -9,6 +9,7 @@ const Clickable = styled.button`
   border: 0;
   padding: 0;
   background: none;
+  cursor: pointer;
 `
 
 export default props => (
