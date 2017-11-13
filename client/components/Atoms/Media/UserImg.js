@@ -14,4 +14,4 @@ const randomInt = (lb, ub) =>
 const randomImage = () =>
   `pb_${randomInt(1, 3)}.jpg`
 
-export default props => <Image src={`/images/avatars/${props.url || randomImage()}`} />
+export default props => <Image src={props.url || `/images/avatars/${randomImage()}`} />

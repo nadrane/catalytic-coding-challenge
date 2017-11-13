@@ -8,4 +8,4 @@ import {
 
 storiesOf('Atoms/Media', module)
   .add('Peeker', () => <Peeker />)
-  .add('UserImg (random)', () => <UserImg />)
+  .add('UserImg (random)', () => <UserImg url="https://4d94k01hrcne3r6uas33wqn8-wpengine.netdna-ssl.com/wp-content/uploads/2017/09/shield-icon.png" />)
