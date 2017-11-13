@@ -13,6 +13,7 @@ import {
 } from '../Organisms'
 import {
   updateActiveStep,
+  updateStepUsers,
 } from '../../store'
 
 const Parent = styled.main`
@@ -35,7 +36,14 @@ const Main = (props) => {
     step,
     {
       selected: step.stepNumber === props.activeStep,
-      onClick: () => props.changeActiveStep(step.stepNumber),
+      onClick: () => props.updateActiveStep(step.stepNumber),
+    },
+  ))
+
+  const users = props.users.map(user => Object.assign(
+    user,
+    {
+      onClick: () => props.toggleUser(user.userId),
     },
   ))
 
@@ -47,7 +55,7 @@ const Main = (props) => {
       <Body>
         <Process />
         <UserImg />
-        <StepContent step={displayStep} />
+        <StepContent step={displayStep} users={users} />
       </Body>
     </Parent>
   )
@@ -56,10 +64,14 @@ const Main = (props) => {
 const mapState = state => ({
   steps: state.steps,
   activeStep: state.activeStep,
+  users: state.users,
 })
 
-const mapDispatch = dispatch => ({
-  changeActiveStep: id => dispatch(updateActiveStep(id)),
+const mapDispatch = (dispatch, ownProps) => ({
+  updateActiveStep: id => dispatch(updateActiveStep(id)),
+  toggleUser: (userId) => {
+    console.log(ownProps.activeStep)
+  },
 })
 
 export default connect(mapState, mapDispatch)(Main)

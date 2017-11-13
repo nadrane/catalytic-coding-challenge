@@ -10,7 +10,7 @@ const Image = styled.img`
 `
 
 const randomInt = (lb, ub) =>
-  Math.floor((Math.random() * (ub - lb)) + lb)
+  Math.floor((Math.random() * (ub - lb + 1)) + lb)
 
 const randomImage = () =>
   `pb_${randomInt(1, 3)}.jpg`

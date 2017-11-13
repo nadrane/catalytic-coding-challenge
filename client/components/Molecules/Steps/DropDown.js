@@ -39,6 +39,8 @@ export default class extends React.Component {
         <DropDownHeader
           open={this.state.open}
           onClick={this.toggleOpen}
+          showNum={this.props.showNum}
+          num={this.props.num}
         >
           {this.props.header}
         </DropDownHeader>
