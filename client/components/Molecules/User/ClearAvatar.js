@@ -4,7 +4,6 @@ import styled from 'styled-components'
 import {
   SmallBody,
 } from '../../Atoms'
-import styles from '../../styles'
 
 const Text = SmallBody.extend`
   text-align: center;
