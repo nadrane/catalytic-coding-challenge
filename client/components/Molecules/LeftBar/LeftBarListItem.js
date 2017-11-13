@@ -18,6 +18,7 @@ export default (props) => {
     width: 100%;
     border: 1px solid ${styles.colors.dark};
     box-sizing: border-box;
+    cursor: pointer;
   `
 
   return (
