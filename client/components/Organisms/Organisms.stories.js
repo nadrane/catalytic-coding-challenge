@@ -4,6 +4,7 @@ import { storiesOf } from '@storybook/react'
 import {
   NavBar,
   Step,
+  Process,
   LeftBar,
 } from '../Organisms'
 
@@ -24,4 +25,7 @@ storiesOf('Organisms', module)
     <div style={{ height: '50vh', width: '50vw' }}>
       <Step />
     </div>
+  ))
+  .add('Process', () => (
+    <Process />
   ))

@@ -11,7 +11,7 @@ export default (props) => {
   `
 
   return (
-    <Parent>
+    <Parent onClick={props.onClick}>
       {props.children} <i className="fa fa-pencil" />
     </Parent>
   )
