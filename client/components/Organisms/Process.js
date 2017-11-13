@@ -5,10 +5,23 @@ import {connect} from 'react-redux'
 import {
   EditableLabel,
   BigTextInput,
+  DropDownHeader,
+  TextInput,
 } from '../Atoms'
 
-const Parent = styled.section`
+const Parent = styled.form`
 
+`
+
+const ExtraInformation = styled.div`
+
+`
+
+const MarginTextInput = TextInput.extend`
+  margin-bottom: 2rem;
+`
+const MarginBigInput = BigTextInput.extend`
+  margin-bottom: 2rem;
 `
 
 export default class extends React.Component {
@@ -30,6 +43,7 @@ export default class extends React.Component {
   }
 
 
+
   render() {
     return (
       <Parent>
@@ -39,7 +53,18 @@ export default class extends React.Component {
         >
           Edit Template
         </EditableLabel>
-        <BigTextInput readOnly={!this.state.editing} />
+        <MarginBigInput readOnly={!this.state.editing} />
+        {
+          this.state.editing && (
+            <ExtraInformation>
+              <EditableLabel>Description</EditableLabel>
+              <MarginTextInput />
+              <EditableLabel>Category</EditableLabel>
+              <MarginTextInput />
+              <DropDownHeader open onClick={this.toggleEditing}>collapse</DropDownHeader>
+            </ExtraInformation>
+          )
+        }
       </Parent>
     )
   }
