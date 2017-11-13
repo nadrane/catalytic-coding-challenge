@@ -10,4 +10,5 @@ export default styled.input`
   border: 0;
   border-bottom: 1px solid ${styles.colors.greyLight};
   margin-bottom: .3rem;
+  background: none;
 `

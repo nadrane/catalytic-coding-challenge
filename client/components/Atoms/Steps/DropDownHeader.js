@@ -8,6 +8,7 @@ import {
 const Clickable = styled.button`
   border: 0;
   padding: 0;
+  background: none;
 `
 
 export default props => (
