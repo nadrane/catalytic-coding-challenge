@@ -3,8 +3,9 @@ import React from 'react'
 import {
   Card,
   EditableLabel,
+  TextInput,
+  TextLabelInput,
 } from '../Atoms'
-
 import {
   LabelledInput,
 } from '../Molecules'
@@ -13,14 +14,14 @@ const Content = Card.extend`
   margin-top: 1.5rem;
 `
 
-export default () => (
-
+export default props => (
   <Content>
-    <LabelledInput>Step Name</LabelledInput>
+    <TextInput defaultValue={props.step.stepName} key={props.step.stepName} />
+    <TextLabelInput>Step Name</TextLabelInput>
+    <br />
     <EditableLabel fontSize=".8rem">Instructions</EditableLabel>
     <LabelledInput>
       This will be shown to the user when they are assigned this step as a task.
     </LabelledInput>
   </Content>
-
 )

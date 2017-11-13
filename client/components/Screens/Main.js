@@ -38,13 +38,15 @@ const Main = (props) => {
     },
   ))
 
+  const displayStep = props.steps.find(step => step.stepNumber === props.activeStep) || {}
+
   return (
     <Parent>
       <LeftBar headers={leftBarHeaders} items={steps} />
       <Body>
         <Process />
         {props.activeStep}
-        <StepContent />
+        <StepContent step={displayStep} />
       </Body>
     </Parent>
   )

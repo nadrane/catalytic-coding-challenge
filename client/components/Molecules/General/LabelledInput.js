@@ -11,9 +11,12 @@ const Parent = styled.div`
 
 `
 
-export default props => (
-  <Parent>
-    {props.bigInput ? <BigTextInput /> : <TextInput />}
-    <TextLabelInput>{props.children}</TextLabelInput>
-  </Parent>
-)
+export default (props) => {
+  const { bigInput, children, ...toPass } = props
+  return (
+    <Parent>
+      {bigInput ? <BigTextInput defaultValue={props.default} key={props.default} {...toPass} /> : <TextInput />}
+      <TextLabelInput {...toPass}>{children}</TextLabelInput>
+    </Parent>
+  )
+}

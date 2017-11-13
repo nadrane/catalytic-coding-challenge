@@ -7,6 +7,7 @@ import {
   BigTextInput,
   TextLabelInput,
   MainSection,
+  ExpandingTextInput,
 } from '../General'
 
 storiesOf('Atoms/General', module)
@@ -26,4 +27,7 @@ storiesOf('Atoms/General', module)
   ))
   .add('MainSection', () => (
     <MainSection>ASDF</MainSection>
+  ))
+  .add('ExpandingTextInput', () => (
+    <ExpandingTextInput />
   ))
