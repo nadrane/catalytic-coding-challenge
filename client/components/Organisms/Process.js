@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 
 import {
   EditableLabel,
@@ -24,7 +24,7 @@ const MarginBigInput = BigTextInput.extend`
   margin-bottom: 2rem;
 `
 
-export default class extends React.Component {
+class Process extends React.Component {
   constructor() {
     super()
     this.state = {
@@ -34,17 +34,12 @@ export default class extends React.Component {
     this.toggleEditing = this.toggleEditing.bind(this)
   }
 
-  componentWillReceiveProps(nextProps) {
-
-  }
-
   toggleEditing() {
     this.setState({ editing: !this.state.editing })
   }
 
-
-
   render() {
+    console.log(this.props)
     return (
       <Parent>
         <EditableLabel
@@ -53,14 +48,24 @@ export default class extends React.Component {
         >
           Edit Template
         </EditableLabel>
-        <MarginBigInput readOnly={!this.state.editing} />
+        <MarginBigInput
+          readOnly={!this.state.editing}
+          defaultValue={this.props.process.processName}
+          key={this.props.process.processName}
+        />
         {
           this.state.editing && (
             <ExtraInformation>
               <EditableLabel>Description</EditableLabel>
-              <MarginTextInput />
+              <MarginTextInput
+                defaultValue={this.props.process.description}
+                key={this.props.process.description}
+              />
               <EditableLabel>Category</EditableLabel>
-              <MarginTextInput />
+              <MarginTextInput
+                defaultValue={this.props.process.category}
+                key={this.props.process.category}
+              />
               <DropDownHeader open onClick={this.toggleEditing}>collapse</DropDownHeader>
             </ExtraInformation>
           )
@@ -69,3 +74,9 @@ export default class extends React.Component {
     )
   }
 }
+
+const mapState = state => ({
+  process: state.process,
+})
+
+export default connect(mapState)(Process)

@@ -10,7 +10,7 @@ export const getProcess = () =>
   async (dispatch) => {
     try {
       const response = await axios.get('/api/process')
-      dispatch(readProcess(response))
+      dispatch(readProcess(response.data))
     } catch (error) {
       console.error(error)
     }
