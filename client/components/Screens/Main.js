@@ -10,6 +10,9 @@ import {
   StepContent,
   Process,
 } from '../Organisms'
+import {
+  updateActiveStep,
+} from '../../store'
 
 const Parent = styled.main`
   display: flex;
@@ -26,18 +29,34 @@ const leftBarHeaders = [
   'steps',
 ]
 
-const Main = props => (
-  <Parent>
-    <LeftBar headers={leftBarHeaders} items={props.steps} />
-    <Body>
-      <Process />
-      <StepContent />
-    </Body>
-  </Parent>
-)
+const Main = (props) => {
+  const steps = props.steps.map(step => Object.assign(
+    step,
+    {
+      selected: step.stepNumber === props.activeStep,
+      onClick: () => props.changeActiveStep(step.stepNumber),
+    },
+  ))
+
+  return (
+    <Parent>
+      <LeftBar headers={leftBarHeaders} items={steps} />
+      <Body>
+        <Process />
+        {props.activeStep}
+        <StepContent />
+      </Body>
+    </Parent>
+  )
+}
 
 const mapState = state => ({
   steps: state.steps,
+  activeStep: state.activeStep,
 })
 
-export default connect(mapState)(Main)
+const mapDispatch = dispatch => ({
+  changeActiveStep: id => dispatch(updateActiveStep(id)),
+})
+
+export default connect(mapState, mapDispatch)(Main)

@@ -18,9 +18,10 @@ export const deleteStep = stepId => ({ type: DELETE_STEP, stepId })
 export const getSteps = () =>
   async (dispatch) => {
     try {
+      const defaultStep = 1
       const response = await axios.get('/api/steps')
       dispatch(readSteps(response.data))
-      dispatch(updateActiveStep(1))
+      dispatch(updateActiveStep(defaultStep))
     } catch (error) {
       console.error(error)
     }

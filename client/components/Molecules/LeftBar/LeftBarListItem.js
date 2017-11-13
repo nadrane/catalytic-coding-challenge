@@ -1,15 +1,18 @@
 import React from 'react'
 import styled from 'styled-components'
+import { connect } from 'react-redux'
 
 import {
   LeftBarTitle,
   SmallBody,
 } from '../../Atoms'
+import {
+  updateActiveStep,
+} from '../../../store'
 import styles from '../../styles'
 
-
-export default (props) => {
-  const backgroundColor = props.selected ? styles.colors.accent : 'white'
+const LeftBarListItem = (props) => {
+  const backgroundColor = props.selected ? styles.colors.greyLight : 'white'
 
   const Parent = styled.li`
     height: ${styles.heights.leftBarItem};
@@ -22,7 +25,7 @@ export default (props) => {
   `
 
   return (
-    <Parent>
+    <Parent onClick={props.onClick}>
       <LeftBarTitle>{props.title}</LeftBarTitle>
       {
         props.assignedTo && (
@@ -30,10 +33,16 @@ export default (props) => {
         )
       }
       {
-        !!props.requiredPreviousSteps.length && (
+        props.requiredPreviousSteps && !!props.requiredPreviousSteps.length && (
           <SmallBody>Depends on: {props.requiredPreviousSteps}</SmallBody>
         )
       }
     </Parent>
   )
 }
+
+const mapDispatch = dispatch => ({
+  updateActiveStep: step => dispatch(updateActiveStep(step)),
+})
+
+export default connect(null, mapDispatch)(LeftBarListItem)
