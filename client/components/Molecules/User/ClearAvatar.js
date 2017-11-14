@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { connect } from 'react-redux'
+import { withRouter } from 'react-router'
 
 import {
   SmallBody,
@@ -46,7 +47,7 @@ const ClearAvatar = props => (
 )
 
 const mapDispatch = (dispatch, ownProps) => ({
-  clearAllUserStep: () => dispatch(clearAllUserStep(ownProps.activeStep)),
+  clearAllUserStep: () => dispatch(clearAllUserStep(+ownProps.match.params.id)),
 })
 
-export default connect(null, mapDispatch)(ClearAvatar)
+export default withRouter(connect(null, mapDispatch)(ClearAvatar))

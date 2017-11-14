@@ -15,7 +15,7 @@ const Parent = styled.div`
 
 const Users = props => (
   <Parent>
-    <ClearAvatar activeStep={props.activeStep} />
+    <ClearAvatar />
     {
       props.users.map(user => <AvatarName key={user.userID} onClick={user.onClick} selected={user.selected} url={user.url}>{user.username}</AvatarName>)
     }

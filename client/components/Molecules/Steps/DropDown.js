@@ -11,36 +11,18 @@ const Parent = styled.section`
   align-items: flex-start;
 `
 
-export default class extends React.Component {
-  constructor() {
-    super()
-    this.state = {
-      open: false,
+export default props => (
+  <Parent>
+    <DropDownHeader
+      open={props.open}
+      onClick={props.onClick}
+      showNum={props.showNum}
+      num={props.num}
+    >
+      {props.header}
+    </DropDownHeader>
+    {
+      props.open && props.children
     }
-    console.log('constructed')
-    this.toggleOpen = this.toggleOpen.bind(this)
-  }
-
-  toggleOpen() {
-    this.setState({ open: !this.state.open })
-  }
-
-  render() {
-    console.log(this.state.open)
-    return (
-      <Parent>
-        <DropDownHeader
-          open={this.state.open}
-          onClick={this.toggleOpen}
-          showNum={this.props.showNum}
-          num={this.props.num}
-        >
-          {this.props.header}
-        </DropDownHeader>
-        {
-          this.state.open && this.props.children
-        }
-      </Parent>
-    )
-  }
-}
+  </Parent>
+)
