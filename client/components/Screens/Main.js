@@ -71,7 +71,6 @@ const mapState = state => ({
 const mapDispatch = dispatch => ({
   updateActiveStep: id => dispatch(updateActiveStep(id)),
   toggleUser: (userId, activeStep) => {
-    console.log(activeStep, userId)
     dispatch(toggleUserStep(activeStep, userId))
   },
 })

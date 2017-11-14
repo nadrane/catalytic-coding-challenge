@@ -1,9 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
+import { connect } from 'react-redux'
 
 import {
   SmallBody,
 } from '../../Atoms'
+import {
+  clearAllUserStep,
+} from '../../../store'
 
 const Text = SmallBody.extend`
   text-align: center;
@@ -28,8 +32,8 @@ const XWrapper = styled.span`
   text-align: center;
 `
 
-export default props => (
-  <Parent onClick={props.onClick}>
+const ClearAvatar = props => (
+  <Parent onClick={props.clearAllUserStep}>
     <XWrapper>
       <i className="fa fa-times-circle fa-3x" />
     </XWrapper>
@@ -40,3 +44,9 @@ export default props => (
     </Text>
   </Parent>
 )
+
+const mapDispatch = (dispatch, ownProps) => ({
+  clearAllUserStep: () => dispatch(clearAllUserStep(ownProps.activeStep)),
+})
+
+export default connect(null, mapDispatch)(ClearAvatar)
