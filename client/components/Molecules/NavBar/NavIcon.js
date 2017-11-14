@@ -10,7 +10,7 @@ import styles from '../../styles'
 
 const Parent = styled.div`
   background-color: ${styles.colors.darkAccent};
-  width: ${styles.widths.small};
+  width: 18em;
   display: flex;
   height: ${styles.heights.nav};
   align-items: center;

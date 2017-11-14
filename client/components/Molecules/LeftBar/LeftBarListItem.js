@@ -33,8 +33,11 @@ const LeftBarListItem = (props) => {
         )
       }
       {
-        props.requiredPreviousSteps && !!props.requiredPreviousSteps.length && (
-          <SmallBody>Depends on: {props.requiredPreviousSteps}</SmallBody>
+        console.log('asdf', props.previousStepNums)
+      }
+      {
+        props.previousStepNums && !!props.previousStepNums.length && (
+          <SmallBody>Depends on: {props.previousStepNums.reduce((accum, stepName) => `${accum} ${stepName}`, '')}</SmallBody>
         )
       }
     </Parent>

@@ -54,7 +54,7 @@ class Process extends React.Component {
           Edit Template
         </EditableLabel>
         <MarginBigInput
-          onClick={!this.state.editing && this.toggleEditing}
+          onClick={!this.state.editing ? this.toggleEditing : undefined}
           readOnly={!this.state.editing}
           defaultValue={this.props.process.processName}
           key={this.props.process.processName}
@@ -63,7 +63,7 @@ class Process extends React.Component {
           this.state.editing && (
             <ExtraInformation>
               <EditableLabel>Description</EditableLabel>
-              <ExpandingTextInput>{this.props.process.description}</ExpandingTextInput>
+              <ExpandingTextInput defaultValue={this.props.process.description} key={this.props.process.description} />
               <EditableLabel>Category</EditableLabel>
               <MarginTextInput
                 defaultValue={this.props.process.category}
