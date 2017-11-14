@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 
 import {
   MainSection,
-  UserImg,
 } from '../Atoms'
 import {
   LeftBar,
@@ -59,7 +58,6 @@ const Main = (props) => {
       <LeftBar headers={leftBarHeaders} items={steps} />
       <Body>
         <Process />
-        <UserImg />
         <StepContent step={displayStep} users={users} />
       </Body>
     </Parent>

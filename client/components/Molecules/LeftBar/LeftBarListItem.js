@@ -15,7 +15,7 @@ const LeftBarListItem = (props) => {
   const backgroundColor = props.selected ? styles.colors.greyLight : 'white'
 
   const Parent = styled.li`
-    height: ${styles.heights.leftBarItem};
+    min-height: ${styles.heights.leftBarItem};
     background-color: ${backgroundColor};
     list-style-position: inside;
     width: 100%;
@@ -29,7 +29,7 @@ const LeftBarListItem = (props) => {
       <LeftBarTitle>{props.title}</LeftBarTitle>
       {
         !!props.assignedTo.length && (
-          <SmallBody><b>Assigned to {props.assignedTo.reduce((accum, name) => `${accum} ${name}`, '')}</b></SmallBody>
+          <SmallBody><b>Assigned to{props.assignedTo.reduce((accum, name) => `${accum} ${name}`, '')}</b></SmallBody>
         )
       }
       {

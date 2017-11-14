@@ -28,7 +28,7 @@ export default (props) => {
       <TextLabelInput>Step Name</TextLabelInput>
       <br />
       <EditableLabel fontSize=".8rem">Instructions</EditableLabel>
-      <ExpandingTextInput>{step.description}</ExpandingTextInput>
+      <ExpandingTextInput defaultValue={step.description} key={step.description} />
       <TextLabelInput>This will be shown to the user when they are assigned this step as a task.</TextLabelInput>
       <DropDown header="Assign User" showNum num={num}>
         <Users users={users} />
