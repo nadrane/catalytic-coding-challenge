@@ -1,6 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import { connect } from 'react-redux'
+import {
+  withRouter,
+} from 'react-router'
 
 import {
   MainSection,
@@ -35,7 +38,6 @@ const matchIdToUserName = (userID, users) =>
 
 const matchStepNameToNumber = (stepName, steps) => {
   const match = steps.find(step => stepName === step.stepName)
-  console.log('m', match)
   return match ? match.stepNumber : null
 }
 
@@ -71,17 +73,16 @@ const Main = (props) => {
   )
 }
 
-const mapState = state => ({
+const mapState = (state, ownProps) => ({
   steps: state.steps,
   activeStep: state.activeStep,
   users: state.users,
+  id: +ownProps.match.params.id,
 })
 
 const mapDispatch = dispatch => ({
   updateActiveStep: id => dispatch(updateActiveStep(id)),
-  toggleUser: (userId, activeStep) => {
-    dispatch(toggleUserStep(activeStep, userId))
-  },
+  toggleUser: (userId, activeStep) => dispatch(toggleUserStep(activeStep, userId)),
 })
 
-export default connect(mapState, mapDispatch)(Main)
+export default withRouter(connect(mapState, mapDispatch)(Main))

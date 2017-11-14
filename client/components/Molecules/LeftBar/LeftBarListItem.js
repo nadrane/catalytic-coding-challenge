@@ -1,15 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
-import { connect } from 'react-redux'
 
 import {
   LeftBarTitle,
   SmallBody,
 } from '../../Atoms'
-import {
-  updateActiveStep,
-} from '../../../store'
 import styles from '../../styles'
+import history from '../../../history'
 
 const ContentWrapper = styled.div`
   min-height: ${styles.heights.leftBarItem};
@@ -44,8 +41,11 @@ const LeftBarListItem = (props) => {
     display: flex;
     align-items: center;
   `
+
+  const redirectHistory = () => history.push(`/step/${props.stepNumber}`)
+
   return (
-    <Parent onClick={props.onClick}>
+    <Parent onClick={redirectHistory}>
       <LeftNumber>{props.stepNumber}</LeftNumber>
       <ContentWrapper>
         <LeftBarTitle>{props.title}</LeftBarTitle>
@@ -64,8 +64,5 @@ const LeftBarListItem = (props) => {
   )
 }
 
-const mapDispatch = dispatch => ({
-  updateActiveStep: step => dispatch(updateActiveStep(step)),
-})
 
-export default connect(null, mapDispatch)(LeftBarListItem)
+export default LeftBarListItem
