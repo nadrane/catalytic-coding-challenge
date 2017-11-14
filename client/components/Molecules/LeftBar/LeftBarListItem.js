@@ -22,6 +22,9 @@ const LeftBarListItem = (props) => {
     border: 1px solid ${styles.colors.dark};
     box-sizing: border-box;
     cursor: pointer;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
   `
 
   return (
@@ -31,9 +34,6 @@ const LeftBarListItem = (props) => {
         !!props.assignedTo.length && (
           <SmallBody><b>Assigned to{props.assignedTo.reduce((accum, name) => `${accum} ${name}`, '')}</b></SmallBody>
         )
-      }
-      {
-        console.log('asdf', props.previousStepNums)
       }
       {
         props.previousStepNums && !!props.previousStepNums.length && (

@@ -63,7 +63,10 @@ class Process extends React.Component {
           this.state.editing && (
             <ExtraInformation>
               <EditableLabel>Description</EditableLabel>
-              <ExpandingTextInput defaultValue={this.props.process.description} key={this.props.process.description} />
+              <ExpandingTextInput
+                defaultValue={this.props.process.description}
+                key={this.props.process.description}
+              />
               <EditableLabel>Category</EditableLabel>
               <MarginTextInput
                 defaultValue={this.props.process.category}

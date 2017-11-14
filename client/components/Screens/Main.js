@@ -46,7 +46,7 @@ const Main = (props) => {
       selected: step.stepNumber === props.activeStep,
       onClick: () => props.updateActiveStep(step.stepNumber),
       assignedTo: step.role.users.map(user => matchIdToUserName(user, props.users)),
-      previousStepNums: step.requiredPreviousSteps.map(prevStep => (matchStepNameToNumber(prevStep, props.steps))),
+      previousStepNums: step.requiredPreviousSteps.map(prevStep => (matchStepNameToNumber(prevStep, props.steps))).filter(ele => ele),
     },
   ))
 

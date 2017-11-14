@@ -5,4 +5,5 @@ export default styled.h1`
   font-family: Roboto, sans-serif;
   font-weight: 300;
   font-size: 1.6rem;
+  text-overflow: ellipsis;
 `
