@@ -14,7 +14,6 @@ import {
   Process,
 } from '../Organisms'
 import {
-  updateActiveStep,
   toggleUserStep,
 } from '../../store'
 
@@ -75,13 +74,11 @@ const Main = (props) => {
 
 const mapState = (state, ownProps) => ({
   steps: state.steps,
-  activeStep: state.activeStep,
   users: state.users,
-  id: +ownProps.match.params.id,
+  activeStep: +ownProps.match.params.id,
 })
 
 const mapDispatch = dispatch => ({
-  updateActiveStep: id => dispatch(updateActiveStep(id)),
   toggleUser: (userId, activeStep) => dispatch(toggleUserStep(activeStep, userId)),
 })
 
