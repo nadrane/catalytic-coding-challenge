@@ -31,12 +31,16 @@ const leftBarHeaders = [
   'steps',
 ]
 
+const matchIdToUserName = (userID, users) =>
+  users.find(user => user.userID === userID).username
+
 const Main = (props) => {
   const steps = props.steps.map(step => Object.assign(
     step,
     {
       selected: step.stepNumber === props.activeStep,
       onClick: () => props.updateActiveStep(step.stepNumber),
+      assignedTo: step.role.users.map(user => matchIdToUserName(user, props.users)),
     },
   ))
 

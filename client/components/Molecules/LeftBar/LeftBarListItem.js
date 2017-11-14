@@ -28,8 +28,8 @@ const LeftBarListItem = (props) => {
     <Parent onClick={props.onClick}>
       <LeftBarTitle>{props.title}</LeftBarTitle>
       {
-        props.assignedTo && (
-          <SmallBody><b>Assigned to {props.assignedTo}</b></SmallBody>
+        !!props.assignedTo.length && (
+          <SmallBody><b>Assigned to {props.assignedTo.reduce((accum, name) => `${accum} ${name}`, '')}</b></SmallBody>
         )
       }
       {
