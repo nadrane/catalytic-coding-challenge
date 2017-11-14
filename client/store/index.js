@@ -10,11 +10,13 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import process from './process'
 import steps from './steps'
 import users from './users'
+import configSettings from './configSettings'
 
 const reducer = combineReducers({
   process,
   steps,
   users,
+  configSettings,
 })
 
 const middleware = composeWithDevTools(applyMiddleware(
@@ -27,3 +29,4 @@ export default store
 export * from './process'
 export * from './steps'
 export * from './users'
+export * from './configSettings'

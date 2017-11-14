@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import {withRouter} from 'react-router'
 
 import {
   DropDown,
@@ -15,7 +15,8 @@ const otherHeaders = [
   { header: 'Maximum Duration', showNum: false },
 ]
 
-export default (props) => {
+const StepDropDown = (props) => {
+  console.log(props)
   const { num, users } = props
   return (
     <div>
@@ -30,3 +31,5 @@ export default (props) => {
     </div>
   )
 }
+
+export default withRouter(StepDropDown)

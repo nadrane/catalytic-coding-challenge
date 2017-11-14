@@ -8,9 +8,6 @@ import {
   ExpandingTextInput,
 } from '../../Atoms'
 import {
-  DropDown,
-} from '../../Molecules'
-import {
   StepDropDown,
 } from '../../Organisms'
 
