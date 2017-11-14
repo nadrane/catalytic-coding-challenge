@@ -46,7 +46,7 @@ const LeftBarListItem = (props) => {
   `
   return (
     <Parent onClick={props.onClick}>
-      <LeftNumber>1</LeftNumber>
+      <LeftNumber>{props.stepNumber}</LeftNumber>
       <ContentWrapper>
         <LeftBarTitle>{props.title}</LeftBarTitle>
         {

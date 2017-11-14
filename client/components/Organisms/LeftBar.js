@@ -29,6 +29,7 @@ export default props => (
           <LeftBarListItem
             key={item.displayName}
             selected={item.selected}
+            stepNumber={item.stepNumber}
             title={item.displayName}
             assignedTo={item.assignedTo}
             requiredPreviousSteps={item.requiredPreviousSteps}
