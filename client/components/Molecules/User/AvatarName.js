@@ -24,7 +24,7 @@ export default (props) => {
       `}
   `
   return (
-    <Parent>
+    <Parent onClick={props.onClick}>
       <UserImg url={props.url} />
       <SmallBody>{props.children}</SmallBody>
     </Parent>

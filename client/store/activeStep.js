@@ -1,4 +1,4 @@
-const UPDATE_ACTIVE_STEP = 'UPDATE_STEP'
+const UPDATE_ACTIVE_STEP = 'UPDATE_ACTIVE_STEP'
 
 export const updateActiveStep = step => ({ type: UPDATE_ACTIVE_STEP, step })
 

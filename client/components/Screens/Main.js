@@ -13,7 +13,7 @@ import {
 } from '../Organisms'
 import {
   updateActiveStep,
-  updateStepUsers,
+  toggleUserStep,
 } from '../../store'
 
 const Parent = styled.main`
@@ -40,14 +40,15 @@ const Main = (props) => {
     },
   ))
 
+  const displayStep = props.steps.find(step => step.stepNumber === props.activeStep) || {}
+
   const users = props.users.map(user => Object.assign(
     user,
     {
-      onClick: () => props.toggleUser(user.userId),
+      onClick: () => props.toggleUser(user.userID, props.activeStep),
+      selected: displayStep.role.users.includes(user.userID),
     },
   ))
-
-  const displayStep = props.steps.find(step => step.stepNumber === props.activeStep) || {}
 
   return (
     <Parent>
@@ -67,10 +68,11 @@ const mapState = state => ({
   users: state.users,
 })
 
-const mapDispatch = (dispatch, ownProps) => ({
+const mapDispatch = dispatch => ({
   updateActiveStep: id => dispatch(updateActiveStep(id)),
-  toggleUser: (userId) => {
-    console.log(ownProps.activeStep)
+  toggleUser: (userId, activeStep) => {
+    console.log(activeStep, userId)
+    dispatch(toggleUserStep(activeStep, userId))
   },
 })
 

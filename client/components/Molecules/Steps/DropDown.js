@@ -11,10 +11,10 @@ const Parent = styled.section`
   align-items: flex-start;
 `
 const appearAnimation = keyframes`
-  from {
-    opacity: 0;
-    transform: translateY(-15px);
-  }
+  // from {
+  //   opacity: 0;
+  //   transform: translateY(-15px);
+  // }
 `
 
 export default class extends React.Component {

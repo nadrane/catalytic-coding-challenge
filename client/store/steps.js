@@ -15,7 +15,7 @@ export const createStep = step => ({ type: CREATE_STEP, step })
 export const readSteps = steps => ({ type: READ_STEPS, steps })
 export const updateStep = step => ({ type: UPDATE_STEP, step })
 export const deleteStep = stepNumber => ({ type: DELETE_STEP, stepNumber })
-export const toggleUserStep = (stepNumber, userID) => ({ type: TOGGLE_USER_STEP, userID })
+export const toggleUserStep = (stepNumber, userID) => ({ type: TOGGLE_USER_STEP, userID, stepNumber })
 
 export const getSteps = () =>
   async (dispatch) => {
@@ -46,7 +46,7 @@ const toggleStepLogic = (state, action) =>
         step,
         {
           role: {
-            users: [...step.roles.users, action.userID],
+            users: [...step.role.users, action.userID],
           },
         },
       )
