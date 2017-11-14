@@ -21,9 +21,6 @@ const ExtraInformation = styled.div`
 const MarginTextInput = TextInput.extend`
   margin-bottom: 2rem;
 `
-const MarginBigInput = BigTextInput.extend`
-  margin-bottom: 2rem;
-`
 
 class Process extends React.Component {
   constructor() {
@@ -43,7 +40,11 @@ class Process extends React.Component {
   }
 
   render() {
-    // console.log(this.props)
+    const MarginBigInput = BigTextInput.extend`
+      margin-bottom: 2rem;
+      ${!this.state.editing && 'cursor: text;'}
+    `
+
     return (
       <Parent>
         <EditableLabel
@@ -53,6 +54,7 @@ class Process extends React.Component {
           Edit Template
         </EditableLabel>
         <MarginBigInput
+          onClick={!this.state.editing && this.toggleEditing}
           readOnly={!this.state.editing}
           defaultValue={this.props.process.processName}
           key={this.props.process.processName}

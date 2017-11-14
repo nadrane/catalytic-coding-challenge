@@ -10,7 +10,7 @@ export default {
     accent: '#F6F6F7',
   },
   widths: {
-    small: '18em',
+    small: '26em',
   },
   heights: {
     nav: '4em',
