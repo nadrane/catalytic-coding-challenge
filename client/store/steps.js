@@ -1,9 +1,5 @@
 import axios from 'axios'
 
-import {
-  updateActiveStep,
-} from '../store'
-
 const CREATE_STEP = 'CREATE_STEP'
 const READ_STEPS = 'READ_STEPS'
 const UPDATE_STEP = 'UPDATE_STEP'
@@ -22,10 +18,8 @@ export const clearAllUserStep = stepNumber => ({ type: CLEAR_ALL_USER_STEP, step
 export const getSteps = () =>
   async (dispatch) => {
     try {
-      const defaultStep = 1
       const response = await axios.get('/api/steps')
       dispatch(readSteps(response.data))
-      dispatch(updateActiveStep(defaultStep))
     } catch (error) {
       console.error(error)
     }
