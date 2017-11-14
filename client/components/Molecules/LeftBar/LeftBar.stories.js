@@ -1,6 +1,8 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
+import { Provider } from 'react-redux'
 
+import store from '../../../store'
 import {
   LeftBarHeader,
   LeftBarListItem,
@@ -15,6 +17,6 @@ storiesOf('Molecules/LeftBar', module)
   ))
   .add('LeftBarListItem selected', () => (
     <ol>
-      <LeftBarListItem selected title="Set up Slack account">Depends on 3</LeftBarListItem>
-    </ol>
+        <LeftBarListItem store={store} selected title="Set up Slack account">Depends on 3</LeftBarListItem>
+      </ol>
   ))
