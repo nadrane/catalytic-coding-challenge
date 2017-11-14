@@ -19,17 +19,18 @@ const Content = Card.extend`
 `
 
 export default (props) => {
-  const { users } = props
+  const { users, step } = props
 
+  const num = step.role ? step.role.users.length : 0
   return (
     <Content>
-      <TextInput defaultValue={props.step.stepName} key={props.step.stepName} />
+      <TextInput defaultValue={step.stepName} key={step.stepName} />
       <TextLabelInput>Step Name</TextLabelInput>
       <br />
       <EditableLabel fontSize=".8rem">Instructions</EditableLabel>
-      <ExpandingTextInput>{props.step.description}</ExpandingTextInput>
+      <ExpandingTextInput>{step.description}</ExpandingTextInput>
       <TextLabelInput>This will be shown to the user when they are assigned this step as a task.</TextLabelInput>
-      <DropDown header="Assign User" showNum num={0}>
+      <DropDown header="Assign User" showNum num={num}>
         <Users users={users} />
       </DropDown>
     </Content>
