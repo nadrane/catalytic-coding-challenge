@@ -15,7 +15,9 @@ const Parent = styled.form`
 `
 
 const ExtraInformation = styled.div`
-  padding-bottom: 3rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid grey;
+  margin-bottom: 1rem;
 `
 
 const MarginTextInput = TextInput.extend`
