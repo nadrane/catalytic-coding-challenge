@@ -6,13 +6,13 @@ import {
   TextInput,
   TextLabelInput,
   ExpandingTextInput,
-} from '../Atoms'
+} from '../../Atoms'
 import {
   DropDown,
-} from '../Molecules'
+} from '../../Molecules'
 import {
-  Users,
-} from '../Organisms'
+  StepDropDown,
+} from '../../Organisms'
 
 const Content = Card.extend`
   margin-top: 1.5rem;
@@ -30,9 +30,7 @@ export default (props) => {
       <EditableLabel fontSize=".8rem">Instructions</EditableLabel>
       <ExpandingTextInput defaultValue={step.description} key={step.description} />
       <TextLabelInput>This will be shown to the user when they are assigned this step as a task.</TextLabelInput>
-      <DropDown header="Assign User" showNum num={num}>
-        <Users users={users} />
-      </DropDown>
+      <StepDropDown users={users} num={num} />
     </Content>
   )
 }
