@@ -10,6 +10,7 @@ import {
   LeftBarTitle,
   LeftBarText,
   EditableLabel,
+  DeleteText,
 } from '../Typography'
 
 const Black = styled.div`
@@ -28,3 +29,4 @@ storiesOf('Atoms/Typography', module)
   .add('LeftBarTitle', () => <LeftBarTitle>Fill out information</LeftBarTitle>)
   .add('EditableLabel', () => <EditableLabel>Edit Template</EditableLabel>)
   .add('EditableLabel main', () => <EditableLabel main>Edit Template</EditableLabel>)
+  .add('DeleteText', () => <DeleteText>Delete</DeleteText>)
