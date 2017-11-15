@@ -70,8 +70,8 @@ class Process extends React.Component {
         <MarginBigInput
           onClick={!this.state.editing ? this.toggleEditing : undefined}
           readOnly={!this.state.editing}
-          defaultValue={this.props.process.processName}
-          key={this.props.process.processName}
+          defaultValue={this.props.process.displayName}
+          key={this.props.process.displayName}
         />
         {
           this.state.editing && (
