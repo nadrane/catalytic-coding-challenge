@@ -8,6 +8,8 @@ import {
   DropDownHeader,
   ExpandingTextInput,
   TextInput,
+  Button,
+  DeleteText,
 } from '../Atoms'
 
 const Parent = styled.form`
@@ -22,6 +24,16 @@ const ExtraInformation = styled.div`
 
 const MarginTextInput = TextInput.extend`
   margin-bottom: 2rem;
+`
+
+const BottomGroup = styled.div`
+  display: flex;
+  justify-content: space-between;
+`
+
+const ButtonGroup = styled.div`
+  display: flex;
+  align-items: center;
 `
 
 class Process extends React.Component {
@@ -80,7 +92,13 @@ class Process extends React.Component {
                 defaultValue={this.props.process.owner}
                 key={this.props.process.owner}
               />
-              <DropDownHeader open onClick={this.toggleEditing}>collapse</DropDownHeader>
+              <BottomGroup>
+                <DropDownHeader open onClick={this.toggleEditing}>collapse</DropDownHeader>
+                <ButtonGroup>
+                  <DeleteText>Delete Template</DeleteText>
+                  <Button>Save</Button>
+                </ButtonGroup>
+              </BottomGroup>
             </ExtraInformation>
           )
         }

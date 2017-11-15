@@ -10,4 +10,5 @@ export default styled.button`
   padding: 0.5rem;
   font-weight: 800;
   font-size: 1rem;
+  cursor: pointer;
 `
