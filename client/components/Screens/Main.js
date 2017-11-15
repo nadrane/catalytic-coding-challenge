@@ -48,6 +48,7 @@ const Main = (props) => {
       onClick: () => props.updateActiveStep(step.stepNumber),
       assignedTo: step.role.users.map(user => matchIdToUserName(user, props.users)),
       previousStepNums: step.requiredPreviousSteps.map(prevStep => (matchStepNameToNumber(prevStep, props.steps))).filter(ele => ele),
+      maximumDuration: step.maximumDuration || 'No maximum',
     },
   ))
 
