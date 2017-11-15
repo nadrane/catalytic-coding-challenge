@@ -32,7 +32,7 @@ export default (props) => {
   const num = step.role ? step.role.users.length : 0
   return (
     <Content>
-      <TextInput defaultValue={step.stepName} key={step.stepName} />
+      <TextInput defaultValue={step.displayName} key={step.displayName} />
       <TextLabelInput>Step Name</TextLabelInput>
       <br />
       <EditableLabel fontSize=".8rem">Instructions</EditableLabel>
