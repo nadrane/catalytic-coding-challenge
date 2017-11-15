@@ -7,6 +7,7 @@ import {
   BigTextInput,
   TextLabelInput,
   MainSection,
+  Button,
   ExpandingTextInput,
 } from '../General'
 
@@ -30,4 +31,7 @@ storiesOf('Atoms/General', module)
   ))
   .add('ExpandingTextInput', () => (
     <ExpandingTextInput />
+  ))
+  .add('Button', () => (
+    <Button>Save</Button>
   ))
