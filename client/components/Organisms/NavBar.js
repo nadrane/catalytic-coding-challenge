@@ -26,7 +26,7 @@ const leftLinks = [
 
 const rightLinks = [
   'team',
-  'cog', // TODO: use font awesome
+  <i className="fa fa-cog" aria-hidden="true" />,
 ]
 
 export default () => (

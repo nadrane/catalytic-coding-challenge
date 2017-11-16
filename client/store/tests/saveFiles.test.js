@@ -130,12 +130,17 @@ describe('saveFiles reducer', () => {
     }))
   })
   it('should handle DIRTY_STEPS', () => {
-    expect(saveFiles.default(defaultState, {
+    expect(saveFiles.default(Object.assign(defaultState, {
+      steps: {
+        2: 'dirty',
+      },
+    }), {
       type: saveFiles.DIRTY_STEPS,
       roleID: '1',
     })).toEqual(Object.assign(defaultState, {
       steps: {
         1: 'dirty',
+        2: 'dirty',
       },
     }))
   })

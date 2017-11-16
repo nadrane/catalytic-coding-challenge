@@ -52,7 +52,7 @@ export default (state = defaultState, action) => {
     case ERROR_PROCESS:
       return Object.assign({}, state, { process: 'error' })
     case DIRTY_STEPS:
-      return Object.assign({}, state, { steps: { [action.roleID]: 'dirty' } })
+      return Object.assign({}, state, { steps: Object.assign({ [action.roleID]: 'dirty' }, state.steps) })
     case DIRTY_PROCESS:
       return Object.assign({}, state, { process: 'dirty' })
     default:
