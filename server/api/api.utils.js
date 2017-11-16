@@ -10,7 +10,7 @@ const promisifiedRF = path =>
 
 const promisifiedWF = (path, content) =>
   new Promise((resolve, reject) => {
-    fs.writeFile(path, content, (err) => {
+    fs.writeFile(path, content, 'utf-8', (err) => {
       if (err) reject(err)
       else resolve()
     })
