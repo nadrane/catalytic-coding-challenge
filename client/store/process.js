@@ -1,9 +1,9 @@
 import axios from 'axios'
 
-const READ_PROCESS = 'READ_PROCESS'
-const UPDATE_PROCESS = 'UPDATE_PROCESS'
+export const READ_PROCESS = 'READ_PROCESS'
+export const UPDATE_PROCESS = 'UPDATE_PROCESS'
 
-const readProcess = proce => ({ type: READ_PROCESS, proce })
+export const readProcess = proce => ({ type: READ_PROCESS, proce })
 export const updateProcess = proce => ({ type: UPDATE_PROCESS, proce })
 
 export const getProcess = () =>

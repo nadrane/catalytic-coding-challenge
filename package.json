@@ -7,6 +7,7 @@
     "build-client": "webpack",
     "build-client-watch": "webpack -w",
     "test": "jest",
+    "test-redux": "jest ./client/store --watch",
     "test-exit": "jest --forceExit",
     "test-watch": "jest --watch",
     "start": "node server/index.js",
