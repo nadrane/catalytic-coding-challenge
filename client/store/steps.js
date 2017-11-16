@@ -6,7 +6,6 @@ const UPDATE_STEP = 'UPDATE_STEP'
 const DELETE_STEP = 'DELETE_STEP'
 const TOGGLE_USER_STEP = 'TOGGLE_USER_STEP'
 const CLEAR_ALL_USER_STEP = 'CLEAR_ALL_USER_STEP'
-const REORDER_STEP = 'REORDER_STEP'
 
 export const createStep = step => ({ type: CREATE_STEP, step })
 export const readSteps = steps => ({ type: READ_STEPS, steps })
@@ -24,6 +23,7 @@ export const getSteps = () =>
       console.error(error)
     }
   }
+
 
 const toggleStepLogic = (state, action) =>
   [...state.map((step) => {
