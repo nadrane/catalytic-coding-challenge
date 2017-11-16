@@ -35,9 +35,8 @@ export default props => (
             requiredPreviousSteps={item.requiredPreviousSteps}
             onClick={item.onClick}
             previousStepNums={item.previousStepNums}
-          >
-            {item.body}
-          </LeftBarListItem>
+          />
+
         ))
       }
     </List>

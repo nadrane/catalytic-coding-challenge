@@ -22,6 +22,7 @@ import {
 } from '../../Organisms'
 import {
   dirtySteps,
+  putStep,
 } from '../../../store'
 import { updateStep } from '../../../store/steps';
 
@@ -76,7 +77,7 @@ const StepContent = (props) => {
       <Buttons>
         <DeleteText>Delete Step</DeleteText>
         {
-          saveFiles.steps[step.stepNumber] === 'dirty' && <RoundedButton>Save Step</RoundedButton>
+          saveFiles.steps[step.roleID] === 'dirty' && <RoundedButton onClick={props.putStep}>Save Step</RoundedButton>
         }
       </Buttons>
     </Content>
@@ -89,9 +90,10 @@ const mapState = state => ({
 
 const mapDispatch = (dispatch, ownProps) => ({
   editStep: (updated) => {
-    dispatch(dirtySteps(ownProps.step.stepNumber))
+    dispatch(dirtySteps(ownProps.step.roleID))
     dispatch(updateStep(Object.assign(ownProps.step, updated)))
   },
+  putStep: () => dispatch(putStep(ownProps.step, ownProps.step.roleID)),
 })
 
 export default connect(mapState, mapDispatch)(StepContent)

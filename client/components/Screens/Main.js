@@ -58,7 +58,7 @@ const Main = (props) => {
   const users = props.users.map(user => Object.assign(
     user,
     {
-      onClick: () => props.toggleUser(user.userID, props.activeStep),
+      onClick: () => props.toggleUser(user.userID, props.steps.find(step => step.stepNumber === props.activeStep).roleID),
       selected: displayStep.role.users.includes(user.userID),
     },
   ))
@@ -81,9 +81,9 @@ const mapState = (state, ownProps) => ({
 })
 
 const mapDispatch = dispatch => ({
-  toggleUser: (userId, activeStep) => {
-    dispatch(toggleUserStep(activeStep, userId))
-    dispatch(dirtySteps(activeStep))
+  toggleUser: (userId, roleID) => {
+    dispatch(toggleUserStep(roleID, userId))
+    dispatch(dirtySteps(roleID))
   },
 })
 

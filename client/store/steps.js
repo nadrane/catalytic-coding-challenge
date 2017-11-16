@@ -14,9 +14,9 @@ const CLEAR_ALL_USER_STEP = 'CLEAR_ALL_USER_STEP'
 export const createStep = step => ({ type: CREATE_STEP, step })
 export const readSteps = steps => ({ type: READ_STEPS, steps })
 export const updateStep = step => ({ type: UPDATE_STEP, step })
-export const deleteStep = stepNumber => ({ type: DELETE_STEP, stepNumber })
-export const toggleUserStep = (stepNumber, userID) => ({ type: TOGGLE_USER_STEP, userID, stepNumber })
-export const clearAllUserStep = stepNumber => ({ type: CLEAR_ALL_USER_STEP, stepNumber })
+export const deleteStep = roleID => ({ type: DELETE_STEP, roleID })
+export const toggleUserStep = (roleID, userID) => ({ type: TOGGLE_USER_STEP, userID, roleID })
+export const clearAllUserStep = roleID => ({ type: CLEAR_ALL_USER_STEP, roleID })
 
 export const getSteps = () =>
   async (dispatch) => {
@@ -28,10 +28,9 @@ export const getSteps = () =>
     }
   }
 
-
 const toggleStepLogic = (state, action) =>
   [...state.map((step) => {
-    if (step.stepNumber === action.stepNumber) {
+    if (step.roleID === action.roleID) {
       if (step.role.users.includes(action.userID)) {
         return Object.assign(
           step,
@@ -63,16 +62,16 @@ export default (state = [], action) => {
       return action.steps
     case UPDATE_STEP:
       return [
-        ...state.filter(step => step.stepNumber !== action.step.stepNumber),
+        ...state.filter(step => step.roleID !== action.step.roleID),
         action.step,
-      ]
+      ].sort((a, b) => a.stepNumber - b.stepNumber)
     case TOGGLE_USER_STEP:
       return toggleStepLogic(state, action)
     case DELETE_STEP:
-      return [...state.filter(step => step.stepNumber !== action.stepNumber)]
+      return [...state.filter(step => step.roleID !== action.roleID)]
     case CLEAR_ALL_USER_STEP:
       return [...state.map(step =>
-        step.stepNumber === action.stepNumber ?
+        step.roleID === action.roleID ?
           Object.assign(
             step,
             {
