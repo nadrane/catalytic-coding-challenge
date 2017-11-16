@@ -8,6 +8,8 @@ import {
 import styles from '../../styles'
 
 export default (props) => {
+
+  console.log(props.url)
   const Parent = styled.div`
     height: fit-content;
     width: fit-content;

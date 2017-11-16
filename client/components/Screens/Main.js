@@ -55,11 +55,12 @@ const Main = (props) => {
 
   const displayStep = props.steps.find(step => step.stepNumber === props.activeStep) || {}
 
-  const users = props.users.map(user => Object.assign(
+  const users = props.users.map((user, index) => Object.assign(
     user,
     {
       onClick: () => props.toggleUser(user.userID, props.steps.find(step => step.stepNumber === props.activeStep).roleID),
       selected: displayStep.role.users.includes(user.userID),
+      url: `/images/avatars/pb_${(index % 3) + 1}.jpg`,
     },
   ))
 
