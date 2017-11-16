@@ -77,7 +77,7 @@ const StepContent = (props) => {
       <Buttons>
         <DeleteText>Delete Step</DeleteText>
         {
-          saveFiles.steps === 'dirty' && <RoundedButton>Save Step</RoundedButton>
+          saveFiles.steps[step.stepNumber] === 'dirty' && <RoundedButton>Save Step</RoundedButton>
         }
       </Buttons>
     </Content>
@@ -88,8 +88,8 @@ const mapState = state => ({
   saveFiles: state.saveFiles,
 })
 
-const mapDispatch = dispatch => ({
-  dirtySteps: () => dispatch(dirtySteps()),
+const mapDispatch = (dispatch, ownProps) => ({
+  dirtySteps: () => dispatch(dirtySteps(ownProps.step.stepNumber)),
 })
 
 export default connect(mapState, mapDispatch)(StepContent)

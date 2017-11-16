@@ -83,7 +83,7 @@ const mapState = (state, ownProps) => ({
 const mapDispatch = dispatch => ({
   toggleUser: (userId, activeStep) => {
     dispatch(toggleUserStep(activeStep, userId))
-    dispatch(dirtySteps())
+    dispatch(dirtySteps(activeStep))
   },
 })
 
