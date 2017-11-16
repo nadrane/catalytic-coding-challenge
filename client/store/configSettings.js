@@ -1,7 +1,7 @@
 import history from '../history'
 
-const RESET_CONFIGURATIONS = 'RESET_CONFIGURATIONS'
-const TOGGLE_CONFIGURATION = 'TOGGLE_CONFIGURATION'
+export const RESET_CONFIGURATIONS = 'RESET_CONFIGURATIONS'
+export const TOGGLE_CONFIGURATION = 'TOGGLE_CONFIGURATION'
 
 export const resetConfigurations = () => ({ type: RESET_CONFIGURATIONS })
 export const toggleConfiguration = configID => ({ type: TOGGLE_CONFIGURATION, configID })
