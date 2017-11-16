@@ -14,9 +14,10 @@ router.get('/', async (req, res, next) => {
   }
 })
 
-router.post('/:roleID', async (req, res, next) => {
+router.put('/:roleID', async (req, res, next) => {
   try {
-    console.log(req.body)
+    const initialData = await promisifiedRF(path.join(__dirname, '..', 'data/steps.json'))
+    console.log(initialData)
   } catch (error) {
     next(error)
   }

@@ -8,6 +8,15 @@ const promisifiedRF = path =>
     })
   })
 
+const promisifiedWF = (path, content) =>
+  new Promise((resolve, reject) => {
+    fs.writeFile(path, content, (err) => {
+      if (err) reject(err)
+      else resolve()
+    })
+  })
+
 module.exports = {
   promisifiedRF,
+  promisifiedWF,
 }
