@@ -47,7 +47,7 @@ const ClearAvatar = props => (
 )
 
 const mapDispatch = (dispatch, ownProps) => ({
-  clearAllUserStep: () => dispatch(clearAllUserStep(+ownProps.match.params.id)),
+  clearAllUserStep: () => dispatch(clearAllUserStep(ownProps.roleID)),
 })
 
 export default withRouter(connect(null, mapDispatch)(ClearAvatar))

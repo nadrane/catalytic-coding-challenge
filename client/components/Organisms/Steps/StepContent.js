@@ -42,7 +42,7 @@ const StepContent = (props) => {
   const { users, step, saveFiles } = props
   const num = step.role ? step.role.users.length : 0
   const headers = [
-    { header: 'Assign User', showNum: true, num, body: <Users users={users} /> },
+    { header: 'Assign User', showNum: true, num, body: <Users users={users} roleID={step.roleID} /> },
     { header: 'Maximum Duration', showNum: false, body: <SmallBody>{step.maximumDuration}</SmallBody> },
     {
       header: 'Dependencies',
