@@ -1,11 +1,11 @@
 import axios from 'axios'
 
-const SAVE_STEPS = 'SAVE_STEPS'
-const SAVE_PROCESS = 'SAVE_PROCESS'
-const ERROR_STEPS = 'ERROR_STEPS'
-const ERROR_PROCESS = 'ERROR_PROCESS'
-const DIRTY_STEPS = 'DIRTY_STEPS'
-const DIRTY_PROCESS = 'DIRTY_PROCESS'
+export const SAVE_STEPS = 'SAVE_STEPS'
+export const SAVE_PROCESS = 'SAVE_PROCESS'
+export const ERROR_STEPS = 'ERROR_STEPS'
+export const ERROR_PROCESS = 'ERROR_PROCESS'
+export const DIRTY_STEPS = 'DIRTY_STEPS'
+export const DIRTY_PROCESS = 'DIRTY_PROCESS'
 
 export const saveSteps = roleID => ({ type: SAVE_STEPS, roleID })
 export const errorSteps = () => ({ type: ERROR_STEPS })
