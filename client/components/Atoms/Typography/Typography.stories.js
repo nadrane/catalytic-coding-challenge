@@ -11,6 +11,7 @@ import {
   LeftBarText,
   EditableLabel,
   DeleteText,
+  SuccessText,
 } from '../Typography'
 
 const Black = styled.div`
@@ -30,3 +31,4 @@ storiesOf('Atoms/Typography', module)
   .add('EditableLabel', () => <EditableLabel>Edit Template</EditableLabel>)
   .add('EditableLabel main', () => <EditableLabel main>Edit Template</EditableLabel>)
   .add('DeleteText', () => <DeleteText>Delete</DeleteText>)
+  .add('SuccessText', () => <SuccessText>GOOD WORK</SuccessText>)

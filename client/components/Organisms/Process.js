@@ -10,6 +10,7 @@ import {
   TextInput,
   Button,
   DeleteText,
+  SuccessText,
 } from '../Atoms'
 import {
   dirtyProcess,
@@ -53,6 +54,7 @@ class Process extends React.Component {
 
     this.toggleEditing = this.toggleEditing.bind(this)
     this.submit = this.submit.bind(this)
+    this.extraText = this.extraText.bind(this)
   }
 
   toggleEditing() {
@@ -62,6 +64,20 @@ class Process extends React.Component {
   submit(e) {
     e.preventDefault()
     this.props.putProcess()
+  }
+
+  extraText() {
+    const status = this.props.saveFiles.process
+    if (status === 'dirty') {
+      return <Button onClick={this.submit}>Save</Button>
+    }
+    if (status === 'saved') {
+      return <SuccessText>Save Successful</SuccessText>
+    }
+    if (status === 'error') {
+      return <DeleteText>Problem Saving</DeleteText>
+    }
+    return null
   }
 
   render() {
@@ -108,7 +124,7 @@ class Process extends React.Component {
                 <ButtonGroup>
                   <DeleteText>Delete Template</DeleteText>
                   {
-                    this.props.saveFiles.process === 'dirty' && <Button onClick={this.submit}>Save</Button>
+                    this.extraText()
                   }
                 </ButtonGroup>
               </BottomGroup>

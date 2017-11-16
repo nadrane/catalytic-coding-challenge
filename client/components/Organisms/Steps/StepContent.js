@@ -10,6 +10,7 @@ import {
   ExpandingTextInput,
   DeleteText,
   SmallBody,
+  SuccessText,
   RoundedButton,
 } from '../../Atoms'
 import {
@@ -59,6 +60,20 @@ const StepContent = (props) => {
     { header: 'Fields', showNum: false },
   ]
 
+  const statusText = () => {
+    const status = saveFiles.steps[step.roleID]
+    if (status === 'dirty') {
+      return <RoundedButton onClick={props.putStep}>Save</RoundedButton>
+    }
+    if (status === 'saved') {
+      return <SuccessText>Save Successful</SuccessText>
+    }
+    if (status === 'error') {
+      return <DeleteText>Problem Saving</DeleteText>
+    }
+    return null
+  }
+
   return (
     <Content>
       <TextInput
@@ -77,7 +92,7 @@ const StepContent = (props) => {
       <Buttons>
         <DeleteText>Delete Step</DeleteText>
         {
-          saveFiles.steps[step.roleID] === 'dirty' && <RoundedButton onClick={props.putStep}>Save Step</RoundedButton>
+          statusText()
         }
       </Buttons>
     </Content>
