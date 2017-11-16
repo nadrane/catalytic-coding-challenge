@@ -43,7 +43,7 @@ describe('saveFiles actions', () => {
   })
 })
 
-describe('async actions', () => {
+describe('async actions saveFiles', () => {
   let store = mockStore()
 
   afterEach(() => {

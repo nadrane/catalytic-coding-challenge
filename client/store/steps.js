@@ -4,12 +4,12 @@ import {
   errorSteps,
 } from '../store'
 
-const CREATE_STEP = 'CREATE_STEP'
-const READ_STEPS = 'READ_STEPS'
-const UPDATE_STEP = 'UPDATE_STEP'
-const DELETE_STEP = 'DELETE_STEP'
-const TOGGLE_USER_STEP = 'TOGGLE_USER_STEP'
-const CLEAR_ALL_USER_STEP = 'CLEAR_ALL_USER_STEP'
+export const CREATE_STEP = 'CREATE_STEP'
+export const READ_STEPS = 'READ_STEPS'
+export const UPDATE_STEP = 'UPDATE_STEP'
+export const DELETE_STEP = 'DELETE_STEP'
+export const TOGGLE_USER_STEP = 'TOGGLE_USER_STEP'
+export const CLEAR_ALL_USER_STEP = 'CLEAR_ALL_USER_STEP'
 
 export const createStep = step => ({ type: CREATE_STEP, step })
 export const readSteps = steps => ({ type: READ_STEPS, steps })
