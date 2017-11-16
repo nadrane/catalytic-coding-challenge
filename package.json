@@ -4,15 +4,14 @@
   "description": "",
   "main": "index.js",
   "jest": {
-    "setupTestFrameworkScriptFile": "./setupTests.test.js"
+    "setupTestFrameworkScriptFile": "./setupTests.js"
   },
   "scripts": {
     "build-client": "webpack",
     "build-client-watch": "webpack -w",
-    "test": "jest",
+    "test": "jest --forceExit",
     "test-redux": "jest ./client/store --watch",
     "test-components": "jest ./client/components --watch",
-    "test-exit": "jest --forceExit",
     "test-watch": "jest --watch",
     "start": "node server/index.js",
     "start-dev": "yarn build-client-watch & nodemon server/index.js",

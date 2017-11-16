@@ -42,7 +42,7 @@ const ButtonGroup = styled.div`
   align-items: center;
 `
 
-class Process extends React.Component {
+export class Process extends React.Component {
   constructor() {
     super()
     this.state = {
