@@ -24,6 +24,18 @@ export const putStep = (step, roleID) =>
     }
   }
 
+export const putProcess = () =>
+  async (dispatch, getState) => {
+    try {
+      const state = getState()
+      const proce = state.process
+      await axios.put('/api/process', proce)
+      dispatch(saveProcess())
+    } catch (error) {
+      dispatch(errorProcess())
+    }
+  }
+
 const defaultState = {
   steps: { error: false },
   process: 'clean',

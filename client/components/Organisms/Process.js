@@ -11,6 +11,11 @@ import {
   Button,
   DeleteText,
 } from '../Atoms'
+import {
+  dirtyProcess,
+  updateProcess,
+  putProcess,
+} from '../../store'
 
 const Parent = styled.form`
 
@@ -47,10 +52,16 @@ class Process extends React.Component {
     }
 
     this.toggleEditing = this.toggleEditing.bind(this)
+    this.submit = this.submit.bind(this)
   }
 
   toggleEditing() {
     this.setState({ editing: !this.state.editing })
+  }
+
+  submit(e) {
+    e.preventDefault()
+    this.props.putProcess()
   }
 
   render() {
@@ -70,21 +81,21 @@ class Process extends React.Component {
         <MarginBigInput
           onClick={!this.state.editing ? this.toggleEditing : undefined}
           readOnly={!this.state.editing}
-          defaultValue={this.props.process.displayName}
-          key={this.props.process.displayName}
+          value={this.props.process.displayName}
+          onChange={e => this.props.editProcess({ displayName: e.target.value })}
         />
         {
           this.state.editing && (
             <ExtraInformation>
               <EditableLabel>Description</EditableLabel>
               <ExpandingTextInput
-                defaultValue={this.props.process.description}
-                key={this.props.process.description}
+                value={this.props.process.description}
+                onChange={e => this.props.editProcess({ description: e.target.value })}
               />
               <EditableLabel>Category</EditableLabel>
               <MarginTextInput
-                defaultValue={this.props.process.category}
-                key={this.props.process.category}
+                value={this.props.process.category}
+                onChange={e => this.props.editProcess({ category: e.target.value })}
               />
               <EditableLabel>Owner</EditableLabel>
               <MarginTextInput
@@ -96,7 +107,9 @@ class Process extends React.Component {
                 <DropDownHeader open onClick={this.toggleEditing}>collapse</DropDownHeader>
                 <ButtonGroup>
                   <DeleteText>Delete Template</DeleteText>
-                  <Button>Save</Button>
+                  {
+                    this.props.saveFiles.process === 'dirty' && <Button onClick={this.submit}>Save</Button>
+                  }
                 </ButtonGroup>
               </BottomGroup>
             </ExtraInformation>
@@ -109,6 +122,15 @@ class Process extends React.Component {
 
 const mapState = state => ({
   process: state.process,
+  saveFiles: state.saveFiles,
 })
 
-export default connect(mapState)(Process)
+const mapDispatch = dispatch => ({
+  editProcess: (updated) => {
+    dispatch(dirtyProcess())
+    dispatch(updateProcess(updated))
+  },
+  putProcess: () => dispatch(putProcess()),
+})
+
+export default connect(mapState, mapDispatch)(Process)

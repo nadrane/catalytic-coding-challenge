@@ -23,8 +23,8 @@ import {
 import {
   dirtySteps,
   putStep,
+  updateStep,
 } from '../../../store'
-import { updateStep } from '../../../store/steps';
 
 const Content = Card.extend`
   margin-top: 1.5rem;
