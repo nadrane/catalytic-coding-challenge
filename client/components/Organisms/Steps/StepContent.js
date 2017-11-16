@@ -23,6 +23,7 @@ import {
 import {
   dirtySteps,
 } from '../../../store'
+import { updateStep } from '../../../store/steps';
 
 const Content = Card.extend`
   margin-top: 1.5rem;
@@ -60,17 +61,15 @@ const StepContent = (props) => {
   return (
     <Content>
       <TextInput
-        defaultValue={step.displayName}
-        key={step.displayName}
-        onChange={props.dirtySteps}
+        onChange={e => props.editStep({ displayName: e.target.value })}
+        value={step.displayName}
       />
       <TextLabelInput>Step Name</TextLabelInput>
       <br />
       <EditableLabel fontSize=".8rem">Instructions</EditableLabel>
       <ExpandingTextInput
-        defaultValue={step.description}
-        key={step.description}
-        onChange={props.dirtySteps}
+        value={step.description}
+        onChange={e => props.editStep({ description: e.target.value })}
       />
       <TextLabelInput>This will be shown to the user when they are assigned this step as a task.</TextLabelInput>
       <StepDropDown headers={headers} />
@@ -89,7 +88,10 @@ const mapState = state => ({
 })
 
 const mapDispatch = (dispatch, ownProps) => ({
-  dirtySteps: () => dispatch(dirtySteps(ownProps.step.stepNumber)),
+  editStep: (updated) => {
+    dispatch(dirtySteps(ownProps.step.stepNumber))
+    dispatch(updateStep(Object.assign(ownProps.step, updated)))
+  },
 })
 
 export default connect(mapState, mapDispatch)(StepContent)

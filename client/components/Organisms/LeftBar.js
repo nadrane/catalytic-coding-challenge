@@ -27,7 +27,7 @@ export default props => (
       {
         props.items.map(item => (
           <LeftBarListItem
-            key={item.displayName}
+            key={item.stepNumber}
             selected={item.selected}
             stepNumber={item.stepNumber}
             title={item.displayName}
