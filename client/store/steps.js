@@ -1,5 +1,9 @@
 import axios from 'axios'
 
+import {
+  errorSteps,
+} from '../store'
+
 const CREATE_STEP = 'CREATE_STEP'
 const READ_STEPS = 'READ_STEPS'
 const UPDATE_STEP = 'UPDATE_STEP'
@@ -20,7 +24,7 @@ export const getSteps = () =>
       const response = await axios.get('/api/steps')
       dispatch(readSteps(response.data))
     } catch (error) {
-      console.error(error)
+      dispatch(errorSteps())
     }
   }
 
