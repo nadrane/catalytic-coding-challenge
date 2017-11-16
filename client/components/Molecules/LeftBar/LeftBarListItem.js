@@ -24,12 +24,12 @@ const LeftNumber = styled.span`
   color: ${styles.colors.grey};
 `
 
-const SmallerBody = SmallBody.extend`
+export const SmallerBody = SmallBody.extend`
   font-size: 0.9rem;
   margin-bottom: 0.7rem;
 `
 
-const LeftBarListItem = (props) => {
+export const LeftBarListItem = (props) => {
   const backgroundColor = props.selected ? styles.colors.greyLight : 'white'
 
   const Parent = styled.li`
