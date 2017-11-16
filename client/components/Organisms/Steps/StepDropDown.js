@@ -9,27 +9,25 @@ import {
   toggleConfiguration,
 } from '../../../store'
 
-const StepDropDown = (props) => {
+export const StepDropDown = props => (
+  <div>
+    {
+      props.headers.map((header, index) => (
+        <DropDown
+          header={header.header}
+          showNum={header.showNum}
+          num={header.num}
+          key={header.header}
+          open={props.configSettings[index]}
+          onClick={() => props.toggleConfiguration(index)}
+        >
+          {header.body}
+        </DropDown>
+      ))
+    }
+  </div>
+)
 
-  return (
-    <div>
-      {
-        props.headers.map((header, index) => (
-          <DropDown
-            header={header.header}
-            showNum={header.showNum}
-            num={header.num}
-            key={header.header}
-            open={props.configSettings[index]}
-            onClick={() => props.toggleConfiguration(index)}
-          >
-            {header.body}
-          </DropDown>
-        ))
-      }
-    </div>
-  )
-}
 
 const mapState = state => ({
   configSettings: state.configSettings,

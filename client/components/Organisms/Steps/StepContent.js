@@ -39,7 +39,7 @@ const Buttons = styled.div`
   margin-top: 1.5rem;
 `
 
-const StepContent = (props) => {
+export const StepContent = (props) => {
   const { users, step, saveFiles } = props
   const num = step.role ? step.role.users.length : 0
   const headers = [
@@ -62,7 +62,6 @@ const StepContent = (props) => {
 
   const statusText = () => {
     const status = saveFiles.steps[step.roleID]
-    console.log(status)
     if (status === 'dirty') {
       return <RoundedButton onClick={props.putStep}>Save</RoundedButton>
     }
