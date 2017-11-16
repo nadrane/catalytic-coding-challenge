@@ -34,7 +34,9 @@ const leftBarHeaders = [
 ]
 
 const matchIdToUserName = (userID, users) =>
-  users.find(user => user.userID === userID).username
+  users.length ?
+    users.find(user => user.userID === userID).username :
+    null
 
 const matchStepNameToNumber = (stepName, steps) => {
   const match = steps.find(step => stepName === step.stepName)

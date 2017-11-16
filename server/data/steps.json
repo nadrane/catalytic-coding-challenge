@@ -1,4 +1,5 @@
-[{
+[
+    {
         "teamName": "catalytic",
         "processName": "onboard-employee",
         "processID": "8e1a3287-f456-4fbd-889e-c944a9a72e1d",
@@ -12,7 +13,8 @@
         "requiredPreviousSteps": [],
         "previousSteps": [],
         "conditions": [],
-        "fields": [{
+        "fields": [
+            {
                 "displayName": "Office Location",
                 "type": "choice",
                 "choices": [
@@ -74,7 +76,7 @@
         "stepName": "set-up-on-trinet-payroll",
         "stepNumber": 3,
         "displayName": "Set up on Trinet payroll",
-        "description": "Go to [Trinet HRPassport](http://www.hrpassport.com) > My Staff > New Hire and enter necessary info.",
+        "description": "Go to [Trinet HRPassport](http://www.hrpassport.com) > My Staff > New Hire and enter necessary info. Save!",
         "createdBy": "sean",
         "maximumDuration": "3 days",
         "priority": "medium",
@@ -86,9 +88,24 @@
         "fields": [],
         "roleID": "5eded9fc-71d3-47aa-9ee6-5940a714c4ea",
         "role": {
-            "users": []
+            "users": [
+                "ffa6811a52cc",
+                "b22d120e11bc",
+                "e2ab9c0089bf",
+                "b4960946b7a"
+            ]
         },
-        "appStep": null
+        "appStep": null,
+        "selected": true,
+        "assignedTo": [
+            "andrew",
+            "ben",
+            "gabe",
+            "kcent"
+        ],
+        "previousStepNums": [
+            1
+        ]
     },
     {
         "teamName": "catalytic",
@@ -106,14 +123,16 @@
         ],
         "previousSteps": [],
         "conditions": [],
-        "fields": [{
-            "displayName": "Identification",
-            "type": "file",
-            "choices": [
-                ""
-            ],
-            "fieldName": "identification"
-        }],
+        "fields": [
+            {
+                "displayName": "Identification",
+                "type": "file",
+                "choices": [
+                    ""
+                ],
+                "fieldName": "identification"
+            }
+        ],
         "roleID": "68ae650b-a4aa-4895-992a-461c67fc4f84",
         "role": {
             "users": []
@@ -212,7 +231,8 @@
         "conditions": [
             "office-location = \"Naperville\""
         ],
-        "fields": [{
+        "fields": [
+            {
                 "displayName": "License Plate #",
                 "type": "string",
                 "choices": [
@@ -256,26 +276,28 @@
         "requiredPreviousSteps": [],
         "previousSteps": [],
         "conditions": [],
-        "fields": [{
-            "displayName": "Systems",
-            "type": "many",
-            "choices": [
-                "Slack",
-                "Github",
-                "Front",
-                "InVision",
-                "Pipedrive",
-                "Kustomer",
-                "Postman",
-                "CircleCI",
-                "Segment",
-                "Expensify",
-                "Zenhub",
-                "Apiary",
-                "Heap"
-            ],
-            "fieldName": "systems"
-        }],
+        "fields": [
+            {
+                "displayName": "Systems",
+                "type": "many",
+                "choices": [
+                    "Slack",
+                    "Github",
+                    "Front",
+                    "InVision",
+                    "Pipedrive",
+                    "Kustomer",
+                    "Postman",
+                    "CircleCI",
+                    "Segment",
+                    "Expensify",
+                    "Zenhub",
+                    "Apiary",
+                    "Heap"
+                ],
+                "fieldName": "systems"
+            }
+        ],
         "roleID": "25c062cd-299b-422d-8850-29799f676a44",
         "role": {
             "users": []
@@ -296,14 +318,16 @@
         "requiredPreviousSteps": [],
         "previousSteps": [],
         "conditions": [],
-        "fields": [{
-            "displayName": "Microsoft Office",
-            "type": "bool",
-            "choices": [
-                ""
-            ],
-            "fieldName": "microsoft-office"
-        }],
+        "fields": [
+            {
+                "displayName": "Microsoft Office",
+                "type": "bool",
+                "choices": [
+                    ""
+                ],
+                "fieldName": "microsoft-office"
+            }
+        ],
         "roleID": "d5768c1b-6f39-4b20-a6de-e35a8fb704d7",
         "role": {
             "users": []
@@ -372,7 +396,8 @@
         "requiredPreviousSteps": [],
         "previousSteps": [],
         "conditions": [],
-        "fields": [{
+        "fields": [
+            {
                 "displayName": "Employee Name",
                 "type": "string",
                 "choices": [
