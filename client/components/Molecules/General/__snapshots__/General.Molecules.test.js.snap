@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`General/Molecules LabelledInput should render itself 1`] = `
+<div>
+  <styled.input />
+  <styled.label />
+</div>
+`;

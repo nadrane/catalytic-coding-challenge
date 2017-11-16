@@ -3,11 +3,15 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "jest": {
+    "setupTestFrameworkScriptFile": "./setupTests.test.js"
+  },
   "scripts": {
     "build-client": "webpack",
     "build-client-watch": "webpack -w",
     "test": "jest",
     "test-redux": "jest ./client/store --watch",
+    "test-components": "jest ./client/components --watch",
     "test-exit": "jest --forceExit",
     "test-watch": "jest --watch",
     "start": "node server/index.js",
@@ -59,6 +63,8 @@
     "babel-register": "^6.26.0",
     "css-loader": "^0.28.7",
     "enzyme": "^3.2.0",
+    "enzyme-adapter-react-16": "^1.1.0",
+    "enzyme-to-json": "^3.2.2",
     "fetch-mock": "^5.13.1",
     "file-loader": "^1.1.5",
     "jest": "^21.2.1",
