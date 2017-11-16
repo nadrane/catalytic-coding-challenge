@@ -51,7 +51,7 @@ const LeftBarListItem = (props) => {
       <ContentWrapper>
         <LeftBarTitle>{props.title}</LeftBarTitle>
         {
-          !!props.assignedTo.length && (
+          props.assignedTo && !!props.assignedTo.length && (
             <SmallerBody><b>Assigned to{props.assignedTo.reduce((accum, name) => `${accum} ${name}`, '')}</b></SmallerBody>
           )
         }

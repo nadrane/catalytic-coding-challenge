@@ -3,7 +3,8 @@ import { storiesOf } from '@storybook/react'
 
 import {
   NavBar,
-  Step,
+  StepContent,
+  StepDropDown,
   Process,
   LeftBar,
   Users,
@@ -32,10 +33,32 @@ const users = [
 storiesOf('Organisms', module)
   .add('NavBar', () => <NavBar />)
   .add('LeftBar', () => <LeftBar headers={leftBarHeaders} items={leftBarItems} />)
-  .add('Step', () => (
+  .add('StepContent', () => (
     <div style={{ height: '50vh', width: '50vw' }}>
-      <Step />
+      <StepContent
+        conditions={[
+          'eat veggies',
+        ]}
+        step={{
+          displayName: '1871 key',
+          previousStepNums: [1, 2, 3],
+          assignedTo: ['sean'],
+        }}
+        users={[
+          { username: 'asdf', userID: 123 },
+          { username: 'tom', userID: 1233 },
+          { username: 'mat', userID: 1232 },
+          { username: 'susie', userID: 1213 },
+        ]}
+      />
     </div>
+  ))
+  .add('StepDropDown', () => (
+    <StepDropDown
+      headers={[
+        { header: 'assign users', showNum: true, num: 3, body: <div>body!</div> },
+      ]}
+    />
   ))
   .add('Process', () => (
     <Process />
