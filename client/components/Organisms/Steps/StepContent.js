@@ -59,7 +59,11 @@ const StepContent = (props) => {
 
   return (
     <Content>
-      <TextInput defaultValue={step.displayName} key={step.displayName} />
+      <TextInput
+        defaultValue={step.displayName}
+        key={step.displayName}
+        onChange={props.dirtySteps}
+      />
       <TextLabelInput>Step Name</TextLabelInput>
       <br />
       <EditableLabel fontSize=".8rem">Instructions</EditableLabel>

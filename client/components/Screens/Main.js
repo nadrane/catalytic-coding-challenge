@@ -15,6 +15,7 @@ import {
 } from '../Organisms'
 import {
   toggleUserStep,
+  dirtySteps,
 } from '../../store'
 
 const Parent = styled.main`
@@ -80,7 +81,10 @@ const mapState = (state, ownProps) => ({
 })
 
 const mapDispatch = dispatch => ({
-  toggleUser: (userId, activeStep) => dispatch(toggleUserStep(activeStep, userId)),
+  toggleUser: (userId, activeStep) => {
+    dispatch(toggleUserStep(activeStep, userId))
+    dispatch(dirtySteps())
+  },
 })
 
 export default withRouter(connect(mapState, mapDispatch)(Main))
