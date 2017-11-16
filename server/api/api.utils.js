@@ -16,7 +16,10 @@ const promisifiedWF = (path, content) =>
     })
   })
 
+const toJSON = str => JSON.stringify(str, null, 4)
+
 module.exports = {
   promisifiedRF,
   promisifiedWF,
+  toJSON,
 }

@@ -1,6 +1,8 @@
 const router = require('express').Router()
 const path = require('path')
 const bodyParser = require('body-parser')
+
+const processRouter = require('./process.routes')
 const stepsRouter = require('./steps.routes')
 
 module.exports = router
@@ -12,14 +14,7 @@ router.use(bodyParser.json())
 router.use(bodyParser.urlencoded({ extended: true }))
 
 router.use('/steps', stepsRouter)
-
-router.get('/process', async (req, res, next) => {
-  try {
-    res.json(await promisifiedRF(path.join(__dirname, '..', 'data/process.json')))
-  } catch (error) {
-    next(error)
-  }
-})
+router.use('/process', processRouter)
 
 router.get('/users', async (req, res, next) => {
   try {

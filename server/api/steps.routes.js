@@ -5,6 +5,7 @@ module.exports = router
 const {
   promisifiedRF,
   promisifiedWF,
+  toJSON,
 } = require('./api.utils')
 
 router.get('/', async (req, res, next) => {
@@ -19,10 +20,10 @@ router.put('/:roleID', async (req, res, next) => {
   try {
     const passedData = req.body
     const initialData = await promisifiedRF(path.join(__dirname, '..', 'data/steps.json'))
-    const toUpload = JSON.stringify([
+    const toUpload = toJSON([
       ...initialData.filter(step => step.roleID !== passedData.roleID),
       passedData,
-    ].sort((a, b) => a.stepNumber - b.stepNumber), null, 4)
+    ].sort((a, b) => a.stepNumber - b.stepNumber))
     await promisifiedWF(path.join(__dirname, '..', 'data/steps.json'), toUpload)
     res.sendStatus(200)
   } catch (error) {
