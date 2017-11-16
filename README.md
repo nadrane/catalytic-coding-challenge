@@ -1,5 +1,17 @@
 # Coding Challenge (Front End)
 
+## Startup
+1. `yarn`
+2. (If the first time running) `yarn build-client`
+3. `yarn start`
+4. Go to localhost:8080
+
+## Storybook
+I used storybook for the majority of the development, to check out the different user stories...
+1. `yarn`
+2. `yarn storybook`
+3. Go to localhost:6006
+
 ## Expectations
 
 1. This project should not take more than 6-8 hours to complete.
@@ -11,11 +23,11 @@
     - Update this readme with any installation instructions needed to get your app running.
 6. The app does **NOT** need to persist data.
     - You can leverage LocalStorage if you like, but this is not required of you.
-7. **You should treat the `data/*.json` as if they were from an API.** 
+7. **You should treat the `data/*.json` as if they were from an API.**
     - That means you should fetch them via an AJAX request to use within your app.
 8. You can use whichever JS/Template/CSS frameworks or preprocessors you see fit to complete this project.
-    - Candidates that choose to use the technologies discussed in the interview process 
-      will be given extra consideration, and so it is very highly recommended that you demonstrate your skills using them. 
+    - Candidates that choose to use the technologies discussed in the interview process
+      will be given extra consideration, and so it is very highly recommended that you demonstrate your skills using them.
 9. The app should be built on a single `html` page and not refresh the browser between view state changes.
 10. You can create as many folders as you see fit and organize the app in any way you think is best.
 
@@ -23,13 +35,13 @@
 
 You'll be building a mini app that shows a single Pushbot process and all of its tasks.
 
-In this project folder is a `data` folder. It has 3 pieces of data you'll need to complete this objective. 
-- **Process**  
-    A process is like the subject of a series of tasks. It is the parent of a collection of *steps*. 
-- **Steps**  
-    Steps always belong to a process. They are the individual tasks that are assigned to people when a 
+In this project folder is a `data` folder. It has 3 pieces of data you'll need to complete this objective.
+- **Process**
+    A process is like the subject of a series of tasks. It is the parent of a collection of *steps*.
+- **Steps**
+    Steps always belong to a process. They are the individual tasks that are assigned to people when a
     process is started. They can be assigned to _many users_ at once. They can also require other steps to be completed before they are started. Sometimes, a step can be started based on _conditions_ of other steps.
-- **Users**  
+- **Users**
     Self-explanatory. These users will be the people on the team that can be assigned to steps, or own a process.
 
 
@@ -41,7 +53,7 @@ See the provided screen shots within the `DESIGN_ASSETS` folder to help guide yo
 
 ### **IMPORTANT NOTES**
 
-Clearly there are some implied features shown in these screenshots you will not be able to display or build in the given time. As long as you include the functionality goals below, you can freely omit other parts of this layout that would "do nothing" in your app. 
+Clearly there are some implied features shown in these screenshots you will not be able to display or build in the given time. As long as you include the functionality goals below, you can freely omit other parts of this layout that would "do nothing" in your app.
 
 You are also free to change the UX and layout of how the Step List, Process Details, and Step details are displayed if you like, or you can follow the design.
 
