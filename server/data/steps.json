@@ -90,18 +90,16 @@
         "role": {
             "users": [
                 "ffa6811a52cc",
-                "b22d120e11bc",
-                "e2ab9c0089bf",
-                "b4960946b7a"
+                "7c6e45bf6462",
+                "177174ccae45"
             ]
         },
         "appStep": null,
         "selected": true,
         "assignedTo": [
             "andrew",
-            "ben",
-            "gabe",
-            "kcent"
+            "scott",
+            "matt"
         ],
         "previousStepNums": [
             1

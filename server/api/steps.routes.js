@@ -24,7 +24,7 @@ router.put('/:roleID', async (req, res, next) => {
       passedData,
     ].sort((a, b) => a.stepNumber - b.stepNumber), null, 4)
     await promisifiedWF(path.join(__dirname, '..', 'data/steps.json'), toUpload)
-    res.sendStatus()
+    res.sendStatus(200)
   } catch (error) {
     next(error)
   }
