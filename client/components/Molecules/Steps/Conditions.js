@@ -8,7 +8,9 @@ export default props =>
   props.conditions && props.conditions.length ? (
     <ul>
       {
-        props.conditions.map(condition => <li key={condition}><SmallBody>{condition}</SmallBody></li>)
+        props.conditions.map(condition => (
+          <li key={condition}><SmallBody>{condition}</SmallBody></li>
+        ))
       }
     </ul>
   ) : (

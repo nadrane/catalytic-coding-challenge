@@ -16,7 +16,16 @@ const Users = props => (
   <Parent>
     <ClearAvatar roleID={props.roleID} />
     {
-      props.users.map(user => <AvatarName key={user.userID} onClick={user.onClick} selected={user.selected} url={user.url}>{user.username}</AvatarName>)
+      props.users.map(user => (
+        <AvatarName
+          key={user.userID}
+          onClick={user.onClick}
+          selected={user.selected}
+          url={user.url}
+        >
+          {user.username}
+        </AvatarName>
+      ))
     }
   </Parent>
 )

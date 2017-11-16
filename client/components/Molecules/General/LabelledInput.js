@@ -10,7 +10,11 @@ export default (props) => {
   const { bigInput, children, ...toPass } = props
   return (
     <div>
-      {bigInput ? <BigTextInput defaultValue={props.default} key={props.default} {...toPass} /> : <TextInput />}
+      {
+        bigInput ?
+          <BigTextInput defaultValue={props.default} key={props.default} {...toPass} /> :
+          <TextInput />
+      }
       <TextLabelInput {...toPass}>{children}</TextLabelInput>
     </div>
   )

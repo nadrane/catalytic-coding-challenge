@@ -9,7 +9,9 @@ export default props =>
     (
       <ul>
         {
-          props.previousStepNums && props.previousStepNums.map(stepNum => <li key={stepNum}>{stepNum}</li>)
+          props.previousStepNums && props.previousStepNums.map(stepNum => (
+            <li key={stepNum}>{stepNum}</li>
+          ))
         }
       </ul>
     ) : (
