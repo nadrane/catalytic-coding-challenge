@@ -1,9 +1,9 @@
 import axios from 'axios'
 
-const CREATE_USER = 'CREATE_USER'
-const READ_USERS = 'READ_USERS'
-const UPDATE_USER = 'UPDATE_USER'
-const DELETE_USER = 'DELTE_USER'
+export const CREATE_USER = 'CREATE_USER'
+export const READ_USERS = 'READ_USERS'
+export const UPDATE_USER = 'UPDATE_USER'
+export const DELETE_USER = 'DELETE_USER'
 
 export const createUser = user => ({ type: CREATE_USER, user })
 export const readUsers = users => ({ type: READ_USERS, users })
@@ -32,7 +32,7 @@ export default (state = [], action) => {
         action.user,
       ]
     case DELETE_USER:
-      return [...state.filter(user => user.userId !== action.userId)]
+      return [...state.filter(user => user.userID !== action.userId)]
     default:
       return state
   }
