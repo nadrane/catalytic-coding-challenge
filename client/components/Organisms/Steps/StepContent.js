@@ -62,6 +62,7 @@ const StepContent = (props) => {
 
   const statusText = () => {
     const status = saveFiles.steps[step.roleID]
+    console.log(status)
     if (status === 'dirty') {
       return <RoundedButton onClick={props.putStep}>Save</RoundedButton>
     }

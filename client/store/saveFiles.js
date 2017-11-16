@@ -18,7 +18,7 @@ export const putStep = (step, roleID) =>
   async (dispatch) => {
     try {
       await axios.put(`/api/steps/${roleID}`, step)
-      dispatch(saveSteps())
+      dispatch(saveSteps(roleID))
     } catch (error) {
       dispatch(errorSteps())
     }
