@@ -12,6 +12,10 @@ import {
   RoundedButton,
 } from '../../Atoms'
 import {
+  Dependencies,
+  Conditions,
+} from '../../Molecules'
+import {
   StepDropDown,
   Users,
 } from '../../Organisms'
@@ -38,30 +42,13 @@ export default (props) => {
       header: 'Dependencies',
       showNum: true,
       num: step.previousStepNums && step.previousStepNums.length,
-      body: (
-        step.previousStepNums &&
-        step.previousStepNums.length ?
-          (
-            <ul>
-              {
-                step.previousStepNums && step.previousStepNums.map(stepNum => <li key={stepNum}>{stepNum}</li>)
-              }
-            </ul>
-          ) :
-          <SmallBody>No Dependencies</SmallBody>
-      ),
+      body: <Dependencies previousStepNums={step.previousStepNums} />,
     },
     {
       header: 'Conditions',
       showNum: true,
       num: step.conditions && step.conditions.length,
-      body: (
-        <ul>
-          {
-            step.conditions && step.conditions.map(condition => <li key={condition}>{condition}</li>)
-          }
-        </ul>
-      ),
+      body: <Conditions conditions={step.conditions} />,
     },
     { header: 'Fields', showNum: false },
   ]

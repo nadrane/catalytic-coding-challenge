@@ -4,6 +4,7 @@ import { storiesOf } from '@storybook/react'
 import {
   DropDown,
   Dependencies,
+  Conditions,
 } from '../Steps'
 
 storiesOf('Molecules/Steps', module)
@@ -15,4 +16,10 @@ storiesOf('Molecules/Steps', module)
   ))
   .add('Dependencies', () => (
     <Dependencies previousStepNums={[1, 2]} />
+  ))
+  .add('Conditions', () => (
+    <Conditions conditions={['eat good', 'asdf']} />
+  ))
+  .add('Conditions empty', () => (
+    <Conditions />
   ))
