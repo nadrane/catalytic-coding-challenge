@@ -20,6 +20,7 @@ export default (props) => {
     padding: 0.5rem;
     border-radius: 5px;
     cursor: pointer;
+    border: 2px solid transparent;
     ${props.selected && `
         border: 2px solid ${styles.colors.pushDark};
         background-color: ${styles.colors.pushLight};
