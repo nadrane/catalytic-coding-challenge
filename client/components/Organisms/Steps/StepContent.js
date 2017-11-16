@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { connect } from 'react-redux'
 
 import {
   Card,
@@ -19,6 +20,9 @@ import {
   StepDropDown,
   Users,
 } from '../../Organisms'
+import {
+  dirtySteps,
+} from '../../../store'
 
 const Content = Card.extend`
   margin-top: 1.5rem;
@@ -32,8 +36,8 @@ const Buttons = styled.div`
   margin-top: 1.5rem;
 `
 
-export default (props) => {
-  const { users, step } = props
+const StepContent = (props) => {
+  const { users, step, saveFiles } = props
   const num = step.role ? step.role.users.length : 0
   const headers = [
     { header: 'Assign User', showNum: true, num, body: <Users users={users} /> },
@@ -59,13 +63,29 @@ export default (props) => {
       <TextLabelInput>Step Name</TextLabelInput>
       <br />
       <EditableLabel fontSize=".8rem">Instructions</EditableLabel>
-      <ExpandingTextInput defaultValue={step.description} key={step.description} />
+      <ExpandingTextInput
+        defaultValue={step.description}
+        key={step.description}
+        onChange={props.dirtySteps}
+      />
       <TextLabelInput>This will be shown to the user when they are assigned this step as a task.</TextLabelInput>
       <StepDropDown headers={headers} />
       <Buttons>
         <DeleteText>Delete Step</DeleteText>
-        <RoundedButton>Save Step</RoundedButton>
+        {
+          saveFiles.steps === 'dirty' && <RoundedButton>Save Step</RoundedButton>
+        }
       </Buttons>
     </Content>
   )
 }
+
+const mapState = state => ({
+  saveFiles: state.saveFiles,
+})
+
+const mapDispatch = dispatch => ({
+  dirtySteps: () => dispatch(dirtySteps()),
+})
+
+export default connect(mapState, mapDispatch)(StepContent)

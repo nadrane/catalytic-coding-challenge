@@ -22,17 +22,17 @@ const defaultState = {
 export default (state = defaultState, action) => {
   switch (action.type) {
     case SAVE_STEPS:
-      return Object.assign(state, { steps: 'clean' })
+      return Object.assign({}, state, { steps: 'clean' })
     case SAVE_PROCESS:
-      return Object.assign(state, { process: 'clean' })
+      return Object.assign({}, state, { process: 'clean' })
     case ERROR_STEPS:
-      return Object.assign(state, { steps: 'error' })
+      return Object.assign({}, state, { steps: 'error' })
     case ERROR_PROCESS:
-      return Object.assign(state, { process: 'error' })
+      return Object.assign({}, state, { process: 'error' })
     case DIRTY_STEPS:
-      return Object.assign(state, { steps: 'dirty' })
+      return Object.assign({}, state, { steps: 'dirty' })
     case DIRTY_PROCESS:
-      return Object.assign(state, { process: 'dirty' })
+      return Object.assign({}, state, { process: 'dirty' })
     default:
       return state
   }
