@@ -4,6 +4,7 @@ export const READ_PROCESS = 'READ_PROCESS'
 export const UPDATE_PROCESS = 'UPDATE_PROCESS'
 
 export const readProcess = proce => ({ type: READ_PROCESS, proce })
+
 export const updateProcess = proce => ({ type: UPDATE_PROCESS, proce })
 
 export const getProcess = () =>
@@ -21,6 +22,8 @@ export default (state = {}, action) => {
     case READ_PROCESS:
       return action.proce
     case UPDATE_PROCESS:
+    // Don't use confusing abbreviations like proce.
+    // I thought you mispelled price.
       return Object.assign(state, action.proce)
     default:
       return state

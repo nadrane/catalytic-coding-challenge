@@ -23,7 +23,9 @@ const Parent = styled.div`
   height: 100%;s
 `
 
+// Nice and simple
 class Routes extends React.Component {
+
   componentDidMount() {
     this.props.loadInitialData()
   }

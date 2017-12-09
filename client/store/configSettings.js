@@ -25,6 +25,8 @@ export default (state = initialState, action) => {
       return initialState
     case TOGGLE_CONFIGURATION:
       return [...state.map((conf, index) => index === action.configID ? !conf : conf)]
+      // just need return state.map((conf, index) => index === action.configID ? !conf : conf)
+      // because map returns an array
     default:
       return state
   }

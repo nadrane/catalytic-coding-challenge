@@ -41,6 +41,10 @@ const defaultState = {
   process: 'clean',
 }
 
+  // This is gross and should be your biggest takeaway.
+  // First, you probably should just be using immutableJs
+  // Second, read this https://redux.js.org/docs/recipes/reducers/NormalizingStateShape.html
+  // your state is heavily nested, and that's a redux anti-pattern
 export default (state = defaultState, action) => {
   switch (action.type) {
     case SAVE_STEPS:

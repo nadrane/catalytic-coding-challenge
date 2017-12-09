@@ -29,6 +29,8 @@ export const getSteps = () =>
   }
 
 const toggleStepLogic = (state, action) =>
+
+  // This code would also benefit from something like immutablejs
   [...state.map((step) => {
     if (step.roleID === action.roleID) {
       if (step.role.users.includes(action.userID)) {

@@ -1,3 +1,5 @@
+// These should really be in their own folder.
+// Its weird to have them side by side with the routes
 const request = require('supertest')
 const app = require('../index')
 
